@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  /* Ink / navy base — confianza, ingeniería */
+  --color-ink-950: #050d17;
+  --color-ink-900: #0a1929;
+  --color-ink-800: #0f2438;
+  --color-ink-700: #163450;
+  --color-ink-600: #1f4a6e;
+
+  /* Aqua accent — agua, frescura */
+  --color-aqua-50: #ecfdff;
+  --color-aqua-100: #cff7fe;
+  --color-aqua-200: #a4ecfc;
+  --color-aqua-300: #66dcf8;
+  --color-aqua-400: #21c3ee;
+  --color-aqua-500: #06a6d4;
+  --color-aqua-600: #0884b1;
+  --color-aqua-700: #0e6a90;
+
+  /* Signal — CTA / WhatsApp / urgencia controlada */
+  --color-signal-400: #ffd24a;
+  --color-signal-500: #ffc107;
+
+  /* Neutrales cálidos para fondos claros */
+  --color-mist-50: #f6f9fb;
+  --color-mist-100: #eef3f7;
+  --color-mist-200: #dde7ee;
+
+  --color-whatsapp: #25d366;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-mist-50);
+    color: var(--color-ink-900);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-aqua-300);
+    color: var(--color-ink-950);
+  }
+}
+
+/* Grilla técnica de fondo */
+.tech-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.tech-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(10, 25, 41, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 25, 41, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Glow aqua reutilizable */
+.aqua-glow {
+  box-shadow:
+    0 0 0 1px rgba(33, 195, 238, 0.15),
+    0 20px 60px -20px rgba(6, 166, 212, 0.45);
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 999px;
+  border: 3px solid var(--color-mist-50);
+}
+
+/* Animación de "flujo" para detalles de agua */
+@keyframes flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.animate-flow {
+  background-size: 200% 100%;
+  animation: flow 8s linear infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Oculta scrollbar en carruseles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
