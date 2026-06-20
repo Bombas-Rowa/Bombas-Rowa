@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { BUSINESS, WA_GENERAL } from '../config'
 import {
@@ -95,13 +94,13 @@ export default function Hero() {
               <IconWhatsApp className="h-5 w-5" />
               Coordinar visita técnica
             </a>
-            <Link
-              to="/productos"
+            <a
+              href="#galeria"
               className="group flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-4 text-base font-bold text-white backdrop-blur transition-colors hover:border-aqua-400/50 hover:bg-white/10"
             >
-              Ver catálogo
+              Ver equipos
               <IconArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </motion.div>
 
           {/* Nota de transparencia sobre la visita */}

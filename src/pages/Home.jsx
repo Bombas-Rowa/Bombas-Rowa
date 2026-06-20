@@ -1,6 +1,6 @@
 import Hero from '../sections/Hero'
 import Services from '../sections/Services'
-import ProductCarousel from '../sections/ProductCarousel'
+import Gallery from '../sections/Gallery'
 import WhyUs from '../sections/WhyUs'
 import Process from '../sections/Process'
 import Testimonials from '../sections/Testimonials'
@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <Services />
-      <ProductCarousel />
+      <Gallery />
       <WhyUs />
       <Process />
       <Testimonials />

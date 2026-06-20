@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {[
                 { l: 'Inicio', to: '/' },
-                { l: 'Productos', to: '/productos' },
+                { l: 'Equipos', to: '/#galeria' },
                 { l: 'Servicios', to: '/#servicios' },
                 { l: 'Cómo trabajamos', to: '/#proceso' },
                 { l: 'Contacto', to: '/#contacto' },

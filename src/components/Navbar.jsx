@@ -6,7 +6,7 @@ import { IconDrop, IconWhatsApp, IconMenu, IconClose, IconPhone } from './Icons'
 const LINKS = [
   { label: 'Inicio', to: '/' },
   { label: 'Servicios', to: '/#servicios' },
-  { label: 'Productos', to: '/productos' },
+  { label: 'Equipos', to: '/#galeria' },
   { label: 'Cómo trabajamos', to: '/#proceso' },
   { label: 'Contacto', to: '/#contacto' },
 ]
