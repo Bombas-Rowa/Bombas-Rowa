@@ -131,8 +131,11 @@ export default function ProductModal({ product, onClose }) {
                   className="mt-6 flex items-center justify-center gap-2.5 rounded-xl bg-whatsapp px-6 py-3.5 font-bold text-white shadow-lg shadow-whatsapp/25 transition-transform hover:scale-[1.02]"
                 >
                   <IconWhatsApp className="h-5 w-5" />
-                  Pedir presupuesto por WhatsApp
+                  Consultar por WhatsApp
                 </a>
+                <p className="mt-2.5 text-center text-xs text-ink-700/55">
+                  El presupuesto exacto te lo damos en la visita técnica a domicilio.
+                </p>
               </div>
             </div>
           </motion.div>

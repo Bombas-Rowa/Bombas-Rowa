@@ -1,22 +1,22 @@
 import Reveal, { SectionHeading } from '../components/Reveal'
-import { WA_GENERAL } from '../config'
+import { BUSINESS, WA_GENERAL } from '../config'
 import { IconChat, IconGauge, IconTools, IconShield, IconWhatsApp } from '../components/Icons'
 
 const STEPS = [
   {
     icon: IconChat,
-    title: 'Nos contás tu problema',
-    text: 'Escribinos por WhatsApp contándonos qué pasa con el agua. Te respondemos en minutos.',
+    title: 'Nos escribís y coordinamos',
+    text: 'Contanos qué pasa con el agua por WhatsApp y agendamos la visita el día y horario que te quede cómodo.',
   },
   {
     icon: IconGauge,
-    title: 'Diagnóstico y presupuesto',
-    text: 'Evaluamos tu instalación —online o en una visita— y te pasamos un presupuesto claro y sin sorpresas.',
+    title: 'Visita técnica y presupuesto exacto',
+    text: `Un técnico matriculado va a tu casa, mide presión y caudal y te entrega un presupuesto exacto, sin sorpresas. La visita tiene un costo de ${BUSINESS.visitCost}.`,
   },
   {
     icon: IconTools,
     title: 'Instalamos tu equipo',
-    text: 'Coordinamos día y horario. Instalamos con repuestos originales y dejamos todo probado y funcionando.',
+    text: `Si avanzás, instalamos con repuestos originales y dejamos todo probado. Te descontamos los ${BUSINESS.visitCost} de la visita del total.`,
   },
   {
     icon: IconShield,
@@ -37,7 +37,7 @@ export default function Process() {
           center
           eyebrow="Cómo trabajamos"
           title="Simple, transparente y sin vueltas"
-          description="Cuatro pasos para volver a tener la presión de agua que tu casa merece."
+          description="No improvisamos por teléfono: vamos a tu casa, vemos la situación real y te damos un presupuesto exacto."
         />
 
         <div className="relative mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -60,8 +60,27 @@ export default function Process() {
           ))}
         </div>
 
+        {/* Callout de confianza: el costo de la visita se descuenta */}
+        <Reveal delay={0.1}>
+          <div className="mx-auto mt-14 flex max-w-3xl flex-col items-center gap-4 rounded-2xl border border-aqua-400/25 bg-aqua-500/10 p-6 text-center sm:flex-row sm:text-left">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-aqua-500/20 text-aqua-300">
+              <IconShield className="h-7 w-7" />
+            </span>
+            <div>
+              <h3 className="font-display text-lg font-bold text-white">
+                Si nos elegís, el diagnóstico te sale gratis
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-mist-100/75">
+                La visita técnica cuesta {BUSINESS.visitCost} y se descuenta del total
+                cuando avanzás con la compra e instalación. Así pagás el precio justo, sin
+                presupuestos &ldquo;por las dudas&rdquo; ni sorpresas.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
         <Reveal delay={0.15}>
-          <div className="mt-14 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <a
               href={WA_GENERAL}
               target="_blank"
@@ -69,7 +88,7 @@ export default function Process() {
               className="group flex items-center gap-2.5 rounded-xl bg-whatsapp px-7 py-4 font-bold text-white shadow-xl shadow-whatsapp/25 transition-transform hover:scale-105"
             >
               <IconWhatsApp className="h-5 w-5" />
-              Empezar ahora por WhatsApp
+              Coordinar mi visita por WhatsApp
             </a>
           </div>
         </Reveal>

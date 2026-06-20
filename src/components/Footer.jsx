@@ -41,7 +41,7 @@ export default function Footer() {
               className="mt-5 inline-flex items-center gap-2 rounded-xl bg-whatsapp px-5 py-3 text-sm font-bold text-white transition-transform hover:scale-105"
             >
               <IconWhatsApp className="h-5 w-5" />
-              Pedir presupuesto
+              Coordinar visita
             </a>
           </div>
 

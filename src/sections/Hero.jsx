@@ -79,8 +79,9 @@ export default function Hero() {
             className="mt-6 max-w-xl text-lg leading-relaxed text-mist-100/75"
           >
             Instalamos, vendemos y reparamos bombas y presurizadores{' '}
-            <span className="font-semibold text-white">Rowa</span>. Técnicos
-            matriculados, repuestos originales y presupuesto sin cargo en el día.
+            <span className="font-semibold text-white">Rowa</span>. Vamos a tu
+            casa, hacemos un diagnóstico profesional y te damos un presupuesto
+            exacto, sin sorpresas.
           </motion.p>
 
           {/* CTAs */}
@@ -92,7 +93,7 @@ export default function Hero() {
               className="group flex items-center justify-center gap-2.5 rounded-xl bg-whatsapp px-6 py-4 text-base font-bold text-white shadow-xl shadow-whatsapp/30 transition-transform hover:scale-[1.03]"
             >
               <IconWhatsApp className="h-5 w-5" />
-              Pedir presupuesto gratis
+              Coordinar visita técnica
             </a>
             <Link
               to="/productos"
@@ -103,13 +104,27 @@ export default function Hero() {
             </Link>
           </motion.div>
 
+          {/* Nota de transparencia sobre la visita */}
+          <motion.p
+            {...fade(0.28)}
+            className="mt-4 flex items-start gap-2 text-sm text-mist-100/65"
+          >
+            <IconShield className="mt-0.5 h-4 w-4 shrink-0 text-aqua-300" />
+            <span>
+              Visita técnica a domicilio: {BUSINESS.visitCost}.{' '}
+              <span className="font-semibold text-aqua-200">
+                Se descuenta del total si avanzás con la instalación.
+              </span>
+            </span>
+          </motion.p>
+
           {/* Reaseguros */}
           <motion.div
             {...fade(0.32)}
-            className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-mist-100/70"
+            className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-mist-100/70"
           >
             {[
-              'Presupuesto sin cargo',
+              'Presupuesto exacto en tu casa',
               'Técnicos matriculados',
               'Garantía oficial',
             ].map((t) => (

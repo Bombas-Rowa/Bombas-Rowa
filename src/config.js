@@ -17,6 +17,10 @@ export const BUSINESS = {
   hours: 'Lun a Sáb · 8:00 a 19:00 hs',
   yearsExperience: 15,
   installations: 2300,
+
+  // Visita técnica: el cliente paga este monto por el diagnóstico a domicilio,
+  // y se le descuenta del total si avanza con la compra + instalación.
+  visitCost: '$30.000',
 }
 
 /**
@@ -29,11 +33,11 @@ export function waLink(message) {
 }
 
 export const WA_GENERAL = waLink(
-  `¡Hola ${BUSINESS.name}! Quiero hacer una consulta sobre instalación / venta de bombas Rowa.`,
+  `¡Hola ${BUSINESS.name}! Quiero coordinar una visita técnica para un tema de presión de agua / bomba Rowa. ¿Cómo seguimos?`,
 )
 
 export function waProduct(product) {
   return waLink(
-    `¡Hola ${BUSINESS.name}! Me interesa el producto "${product.name}". ¿Me pueden pasar un presupuesto?`,
+    `¡Hola ${BUSINESS.name}! Me interesa el equipo "${product.name}". Quiero hacer una consulta y coordinar una visita técnica.`,
   )
 }

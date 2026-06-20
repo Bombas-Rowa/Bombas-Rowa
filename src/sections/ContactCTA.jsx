@@ -35,14 +35,17 @@ export default function ContactCTA() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-5 font-display text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
-                Tu presupuesto está a{' '}
+                Coordiná tu visita a{' '}
                 <span className="text-aqua-300">un mensaje</span> de distancia
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-mist-100/75">
-                Contanos qué necesitás y recibí una respuesta clara, sin compromiso. Estamos
-                listos para devolverle la presión al agua de tu casa.
+                Contanos qué necesitás y agendamos una visita técnica para darte un
+                presupuesto exacto. La visita cuesta {BUSINESS.visitCost} y{' '}
+                <span className="font-semibold text-aqua-200">
+                  se descuenta si avanzás con la instalación.
+                </span>
               </p>
             </Reveal>
 
@@ -69,7 +72,7 @@ export default function ContactCTA() {
 
             <Reveal delay={0.2}>
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-mist-100/65">
-                {['Respuesta el mismo día', 'Sin cargo', 'Sin compromiso'].map((t) => (
+                {['Respuesta el mismo día', 'Técnicos matriculados', 'Precio justo, sin sorpresas'].map((t) => (
                   <span key={t} className="flex items-center gap-2">
                     <IconCheck className="h-4 w-4 text-aqua-300" />
                     {t}

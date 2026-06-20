@@ -94,7 +94,7 @@ export default function ProductCarousel() {
                       className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 py-2.5 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
                     >
                       <IconWhatsApp className="h-4 w-4" />
-                      Presupuestar
+                      Consultar
                     </a>
                     <button
                       onClick={() => setSelected(p)}

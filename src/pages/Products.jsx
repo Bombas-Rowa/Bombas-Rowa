@@ -39,8 +39,8 @@ export default function Products() {
               Explorá toda la línea. Tocá{' '}
               <span className="font-semibold text-aqua-300">“Ver más”</span> en cualquier producto
               para conocer todas sus especificaciones, y{' '}
-              <span className="font-semibold text-white">“Presupuestar”</span> para pedir tu precio
-              por WhatsApp.
+              <span className="font-semibold text-white">“Consultar”</span> para escribirnos por
+              WhatsApp. El precio exacto te lo damos en la visita técnica.
             </p>
           </Reveal>
 
@@ -117,8 +117,8 @@ export default function Products() {
               ¿No sabés cuál elegir?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-mist-100/75">
-              Contanos cuántos baños tenés y qué problema notás con el agua. Te recomendamos el
-              equipo justo, sin venderte de más.
+              Contanos cuántos baños tenés y qué problema notás con el agua. Coordinamos una visita,
+              vemos tu instalación y te recomendamos el equipo justo, sin venderte de más.
             </p>
             <a
               href={WA_GENERAL}
@@ -127,7 +127,7 @@ export default function Products() {
               className="mt-6 inline-flex items-center gap-2.5 rounded-xl bg-whatsapp px-7 py-4 font-bold text-white shadow-xl shadow-whatsapp/25 transition-transform hover:scale-105"
             >
               <IconWhatsApp className="h-5 w-5" />
-              Pedir asesoramiento gratis
+              Coordinar una visita
             </a>
             <p className="mt-4 text-xs text-mist-100/50">
               {BUSINESS.hours} · {BUSINESS.city}

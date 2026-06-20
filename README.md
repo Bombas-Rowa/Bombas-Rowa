@@ -19,6 +19,7 @@ Todo lo configurable del negocio está en **`src/config.js`**:
 |-------|----------------|
 | `whatsapp` | ⚠️ **Número de WhatsApp** al que llegan TODOS los botones. Formato internacional sin `+` ni espacios. Ej: `5491122334455`. **Reemplazar el placeholder `5491100000000`.** |
 | `phoneDisplay` | Teléfono que se muestra y para el botón "Llamar" |
+| `visitCost` | Costo de la visita técnica a domicilio (ej. `$30.000`). Se muestra en el Hero, "Cómo trabajamos", FAQ y contacto, siempre aclarando que **se descuenta del total si el cliente avanza con la instalación**. |
 | `email`, `city`, `hours` | Datos de contacto del footer y sección de contacto |
 | `name`, `tagline` | Nombre de la marca |
 | `yearsExperience`, `installations` | Números de las estadísticas de confianza |

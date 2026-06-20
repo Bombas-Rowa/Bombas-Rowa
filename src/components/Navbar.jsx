@@ -94,7 +94,7 @@ export default function Navbar() {
             className="flex items-center gap-2 rounded-xl bg-whatsapp px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-whatsapp/25 transition-transform hover:scale-105"
           >
             <IconWhatsApp className="h-4.5 w-4.5" />
-            Pedir presupuesto
+            Coordinar visita
           </a>
         </div>
 
@@ -130,7 +130,7 @@ export default function Navbar() {
             className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 py-3.5 text-base font-bold text-white"
           >
             <IconWhatsApp className="h-5 w-5" />
-            Pedir presupuesto por WhatsApp
+            Coordinar visita por WhatsApp
           </a>
         </div>
       )}

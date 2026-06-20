@@ -67,7 +67,7 @@ export default function ProductCard({ product, index = 0, onExpand }) {
             className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 py-3 text-sm font-bold text-white shadow-md shadow-whatsapp/25 transition-transform hover:scale-[1.02]"
           >
             <IconWhatsApp className="h-4.5 w-4.5" />
-            Presupuestar
+            Consultar
           </a>
           <button
             onClick={() => onExpand?.(product)}
