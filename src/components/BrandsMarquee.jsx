@@ -5,7 +5,7 @@ import { BRANDS } from '../config'
 function MarqueeItem({ brand }) {
   const [failed, setFailed] = useState(false)
   return (
-    <span className="mx-6 inline-flex shrink-0 items-center">
+    <span className="mx-5 inline-flex shrink-0 items-center sm:mx-7">
       {brand.logo && !failed ? (
         <img
           src={brand.logo}

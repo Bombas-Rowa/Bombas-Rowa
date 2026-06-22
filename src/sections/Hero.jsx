@@ -11,7 +11,7 @@ const fade = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-ink-950 pt-20 text-white lg:pt-28">
+    <section className="relative flex flex-col overflow-hidden bg-ink-950 pt-24 text-white lg:min-h-[100svh] lg:pt-28">
       <div className="absolute inset-0 tech-grid opacity-40" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aqua-500/40 to-transparent" />
 
@@ -113,7 +113,7 @@ export default function Hero() {
       </div>
 
       {/* ===== HERO MOBILE (rediseño dedicado) ===== */}
-      <div className="relative flex flex-1 flex-col justify-center px-6 pb-6 pt-4 lg:hidden">
+      <div className="relative flex flex-col px-6 pb-10 pt-6 lg:hidden">
         {/* glow suave para dar profundidad */}
         <div className="pointer-events-none absolute left-1/2 top-[38%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-aqua-500/15 blur-[90px]" />
 
