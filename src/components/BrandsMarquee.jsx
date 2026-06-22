@@ -1,0 +1,43 @@
+import { useState } from 'react'
+import { BRANDS } from '../config'
+
+// Un logo (o el nombre como fallback) dentro de la cinta. Normalizado a blanco.
+function MarqueeItem({ brand }) {
+  const [failed, setFailed] = useState(false)
+  return (
+    <span className="mx-7 inline-flex shrink-0 items-center">
+      {brand.logo && !failed ? (
+        <img
+          src={brand.logo}
+          alt={brand.name}
+          onError={() => setFailed(true)}
+          className="h-7 w-auto max-w-[130px] object-contain opacity-60 [filter:brightness(0)_invert(1)] transition group-hover:opacity-90"
+        />
+      ) : (
+        <span className="font-display text-lg font-extrabold tracking-tight text-white/55 transition group-hover:text-white/80">
+          {brand.name}
+        </span>
+      )}
+    </span>
+  )
+}
+
+// Cinta de marcas que pasa sola debajo del Hero. Duplicamos la lista para que
+// el loop sea continuo y se pausa al pasar el mouse por encima.
+export default function BrandsMarquee() {
+  const items = [...BRANDS, ...BRANDS]
+  return (
+    <section
+      aria-label="Marcas con las que trabajamos"
+      className="border-t border-white/5 bg-ink-950 py-5"
+    >
+      <div className="marquee-mask group overflow-hidden">
+        <div className="animate-marquee flex w-max items-center group-hover:[animation-play-state:paused]">
+          {items.map((b, i) => (
+            <MarqueeItem key={`${b.name}-${i}`} brand={b} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
