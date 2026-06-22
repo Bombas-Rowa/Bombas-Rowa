@@ -1,21 +1,25 @@
+import { useState } from 'react'
 import Reveal, { SectionHeading } from '../components/Reveal'
 import { BRANDS } from '../config'
 import { IconCheck } from '../components/Icons'
 
-// Logo de marca: usa la imagen si existe (brand.logo en /public/marcas/),
-// si no, muestra el nombre como wordmark.
+// Logo de marca: usa la imagen (brand.logo en /public/marcas/) normalizada a
+// blanco para que todas se vean parejas sobre la tarjeta oscura. Si el archivo
+// no existe todavía, cae al nombre como wordmark.
 function BrandLogo({ brand }) {
-  if (brand.logo) {
+  const [failed, setFailed] = useState(false)
+  if (brand.logo && !failed) {
     return (
       <img
         src={brand.logo}
         alt={brand.name}
-        className="max-h-10 w-auto object-contain opacity-80 grayscale transition group-hover:opacity-100 group-hover:grayscale-0"
+        onError={() => setFailed(true)}
+        className="max-h-9 w-auto max-w-[130px] object-contain opacity-90 [filter:brightness(0)_invert(1)] transition group-hover:opacity-100"
       />
     )
   }
   return (
-    <span className="font-display text-xl font-extrabold tracking-tight text-ink-700/70 transition-colors group-hover:text-ink-900">
+    <span className="font-display text-xl font-extrabold tracking-tight text-white/85">
       {brand.name}
     </span>
   )
@@ -23,7 +27,7 @@ function BrandLogo({ brand }) {
 
 export default function Brands() {
   return (
-    <section id="marcas" className="relative bg-white py-20 lg:py-28">
+    <section id="marcas" className="relative bg-mist-50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           center
@@ -32,12 +36,14 @@ export default function Brands() {
           description="No te atamos a una sola opción. Te ofrecemos Rowa por su calidad y respaldo, y otras marcas reconocidas para que elijas según tu presupuesto. Siempre te asesoramos para que compres lo justo."
         />
 
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-4">
           {BRANDS.map((b, i) => (
-            <Reveal key={b.name} delay={(i % 6) * 0.05}>
+            <Reveal key={b.name} delay={(i % 4) * 0.05}>
               <div
-                className={`group relative flex h-28 flex-col items-center justify-center rounded-2xl border bg-mist-50 px-3 text-center transition-all hover:-translate-y-1 hover:shadow-lg ${
-                  b.featured ? 'border-aqua-300 ring-1 ring-aqua-300/40' : 'border-mist-200'
+                className={`group relative flex h-28 w-44 flex-col items-center justify-center gap-2 rounded-2xl border bg-ink-900 px-5 text-center transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-ink-950/20 ${
+                  b.featured
+                    ? 'border-aqua-400/60 ring-1 ring-aqua-400/40'
+                    : 'border-white/10'
                 }`}
               >
                 {b.featured && (
@@ -47,7 +53,7 @@ export default function Brands() {
                 )}
                 <BrandLogo brand={b} />
                 {b.note && (
-                  <span className="mt-1.5 text-[11px] font-medium text-ink-700/60">{b.note}</span>
+                  <span className="text-[11px] font-medium text-aqua-200/70">{b.note}</span>
                 )}
               </div>
             </Reveal>

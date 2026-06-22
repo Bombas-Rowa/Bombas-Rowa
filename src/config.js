@@ -30,12 +30,13 @@ export const BUSINESS = {
 // Si tenés el logo en imagen, dejalo en /public/marcas/<archivo> y poné la
 // ruta en `logo`; si no, se muestra el nombre como wordmark.
 export const BRANDS = [
-  { name: 'Rowa', featured: true, note: 'Calidad y respaldo' },
-  { name: 'Motorarg' },
-  { name: 'Czerweny' },
-  { name: 'Gospel' },
-  { name: 'Pedrollo' },
-  { name: 'Grundfos' },
+  { name: 'Rowa', featured: true, note: 'Calidad y respaldo', logo: '/marcas/rowa.svg' },
+  { name: 'Motorarg', logo: '/marcas/motorarg.svg' },
+  { name: 'Grundfos', logo: '/marcas/grundfos.svg' },
+  { name: 'Pedrollo', logo: '/marcas/pedrollo.svg' },
+  { name: 'Espa', logo: '/marcas/espa.svg' },
+  { name: 'Franklin Electric', logo: '/marcas/franklinElectric.svg' },
+  { name: 'Komasa', logo: '/marcas/komasa.svg' },
 ]
 
 /**
