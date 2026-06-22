@@ -113,7 +113,7 @@ export default function Hero() {
       </div>
 
       {/* ===== HERO MOBILE (rediseño dedicado) ===== */}
-      <div className="relative flex flex-1 flex-col px-6 pb-10 pt-6 lg:hidden">
+      <div className="relative flex flex-1 flex-col justify-center px-6 pb-10 pt-6 lg:hidden">
         {/* glow suave para dar profundidad */}
         <div className="pointer-events-none absolute left-1/2 top-[38%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-aqua-500/15 blur-[90px]" />
 

@@ -141,6 +141,14 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+.animate-marquee img,
+.animate-marquee span {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
 .marquee-mask {
   -webkit-mask-image: linear-gradient(
     to right,
