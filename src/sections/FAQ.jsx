@@ -7,10 +7,10 @@ import { IconChevron, IconWhatsApp } from '../components/Icons'
 const FAQS = [
   {
     q: '¿Cómo es la visita técnica y cuánto cuesta?',
-    a: `Un técnico matriculado va a tu casa, revisa tu instalación y mide presión y caudal para darte un presupuesto exacto. La visita tiene un costo de ${BUSINESS.visitCost}. Si decidís avanzar con la compra e instalación, ese monto se descuenta del total: en la práctica, el diagnóstico te termina saliendo gratis.`,
+    a: `Un técnico matriculado va a tu casa, revisa tu instalación y mide presión y caudal para darte un presupuesto exacto. La visita tiene un costo de ${BUSINESS.visitCost} y, si decidís avanzar con la compra e instalación, ese monto se descuenta del total. Así pagás el precio justo, sin presupuestos "por las dudas".`,
   },
   {
-    q: '¿Por qué la visita no es gratis?',
+    q: '¿Por qué la visita tiene un costo?',
     a: 'Porque hacemos un diagnóstico real, no un número aproximado por teléfono. Yendo a tu casa medimos la situación exacta y te aseguramos que comprás justo lo que necesitás, ni de más ni de menos. Y como el costo se descuenta si avanzás, no pagás de más por el asesoramiento.',
   },
   {

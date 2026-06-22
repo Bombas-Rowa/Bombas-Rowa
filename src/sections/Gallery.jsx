@@ -85,7 +85,7 @@ export default function Gallery() {
                   </span>
                 </div>
                 <div className="border-t border-mist-100 px-3 py-2.5">
-                  <p className="truncate text-center text-sm font-semibold text-ink-800">
+                  <p className="line-clamp-2 text-center text-sm font-semibold text-ink-800">
                     {p.name}
                   </p>
                 </div>

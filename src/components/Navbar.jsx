@@ -26,6 +26,14 @@ export default function Navbar() {
 
   useEffect(() => setOpen(false), [location])
 
+  // Bloquea el scroll del fondo mientras el menú mobile está abierto.
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
   const handleNav = (e, to) => {
     if (to.startsWith('/#')) {
       e.preventDefault()
@@ -43,12 +51,12 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'border-b border-white/10 bg-ink-950/85 backdrop-blur-xl'
+        scrolled || open
+          ? 'border-b border-white/10 bg-ink-950/95 backdrop-blur-xl'
           : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8">
+      <nav className="relative z-50 mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8">
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2.5">
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-aqua-500 text-ink-950 shadow-lg shadow-aqua-500/30 transition-transform group-hover:scale-105">
@@ -108,30 +116,39 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Menú mobile */}
+      {/* Menú mobile: overlay de pantalla completa */}
       {open && (
-        <div className="border-t border-white/10 bg-ink-950/95 px-5 py-4 backdrop-blur-xl lg:hidden">
-          <div className="flex flex-col gap-1">
+        <div className="fixed inset-0 z-40 flex h-[100dvh] flex-col overflow-y-auto bg-ink-950 px-5 pb-10 pt-24 lg:hidden">
+          <nav className="flex flex-col gap-1">
             {LINKS.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={(e) => handleNav(e, l.to)}
-                className="rounded-lg px-4 py-3 text-base font-semibold text-mist-100/90 transition-colors hover:bg-white/5"
+                className="rounded-xl px-4 py-3.5 text-lg font-semibold text-mist-100/90 transition-colors hover:bg-white/5 hover:text-white"
               >
                 {l.label}
               </Link>
             ))}
+          </nav>
+          <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-6">
+            <a
+              href={WA_GENERAL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 py-4 text-base font-bold text-white shadow-lg shadow-whatsapp/25"
+            >
+              <IconWhatsApp className="h-5 w-5" />
+              Coordinar visita por WhatsApp
+            </a>
+            <a
+              href={`tel:${BUSINESS.phoneDisplay.replace(/\s/g, '')}`}
+              className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-4 text-base font-bold text-white"
+            >
+              <IconPhone className="h-5 w-5 text-aqua-300" />
+              {BUSINESS.phoneDisplay}
+            </a>
           </div>
-          <a
-            href={WA_GENERAL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-whatsapp px-4 py-3.5 text-base font-bold text-white"
-          >
-            <IconWhatsApp className="h-5 w-5" />
-            Coordinar visita por WhatsApp
-          </a>
         </div>
       )}
     </header>
