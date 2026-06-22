@@ -58,7 +58,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="relative z-50 mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8">
+      <nav className="relative z-50 mx-auto flex max-w-[1536px] items-center justify-between px-5 py-3.5 lg:px-8">
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2.5">
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-ink-900 shadow-lg shadow-ink-950/40 ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105">

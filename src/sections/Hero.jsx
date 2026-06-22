@@ -11,7 +11,7 @@ const fade = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col overflow-hidden bg-ink-950 pt-24 text-white lg:min-h-[100svh] lg:pt-28">
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-ink-950 pt-24 text-white lg:pt-28">
       <div className="absolute inset-0 tech-grid opacity-40" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aqua-500/40 to-transparent" />
 
