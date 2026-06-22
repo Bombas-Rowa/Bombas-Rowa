@@ -91,13 +91,6 @@ export default function Navbar() {
         {/* CTA desktop */}
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href={`tel:${BUSINESS.phoneDisplay.replace(/\s/g, '')}`}
-            className="flex items-center gap-1.5 text-sm font-semibold text-mist-100/80 transition-colors hover:text-white"
-          >
-            <IconPhone className="h-4 w-4 text-aqua-300" />
-            {BUSINESS.phoneDisplay}
-          </a>
-          <a
             href={WA_GENERAL}
             target="_blank"
             rel="noopener noreferrer"
