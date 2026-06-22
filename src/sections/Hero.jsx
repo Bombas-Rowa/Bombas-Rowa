@@ -147,7 +147,7 @@ export default function Hero() {
                 <div className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-aqua-200/50 blur-2xl" />
                 <div className="pointer-events-none absolute -bottom-8 -left-6 h-28 w-28 rounded-full bg-aqua-300/30 blur-2xl" />
                 <img
-                  src="/hero2.jpg"
+                  src="/hero5.jpeg"
                   alt="Presurizadora Rowa Tango Press"
                   className="relative z-10 h-full w-full object-cover "
                   onError={(e) => {

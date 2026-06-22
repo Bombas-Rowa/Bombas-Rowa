@@ -7,6 +7,10 @@ import { PRODUCTS } from '../data/products'
 import { WA_GENERAL } from '../config'
 import { IconWhatsApp, IconClose } from '../components/Icons'
 
+// Equipos que se muestran en la galería (8 imágenes).
+// Para mostrar otro equipo, cambiá el id excluido o agregá/quitá del filtro.
+const GALLERY_PRODUCTS = PRODUCTS.filter((p) => p.id !== 'tango-sfl-20')
+
 // Galería de imágenes de equipos Rowa sobre un fondo de agua (atmósfera
 // cohesiva con la paleta). Tarjetas blancas que resaltan sobre el navy.
 // Al tocar una imagen se abre un lightbox para verla en grande.
@@ -52,7 +56,7 @@ export default function Gallery() {
 
         {/* Grilla de imágenes */}
         <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {PRODUCTS.map((p, i) => (
+          {GALLERY_PRODUCTS.map((p, i) => (
             <Reveal key={p.id} delay={(i % 4) * 0.06}>
               <button
                 onClick={() => setZoom(p)}
