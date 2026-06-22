@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { BUSINESS, WA_GENERAL } from '../config'
 import { IconWhatsApp, IconArrowRight, IconShield, IconCheck } from '../components/Icons'
+import BrandsMarquee from '../components/BrandsMarquee'
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 18 },
@@ -10,11 +11,12 @@ const fade = (delay = 0) => ({
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden bg-ink-950 pb-14 pt-24 text-white lg:min-h-[100svh] lg:pt-28">
+    <section className="relative flex flex-col overflow-hidden bg-ink-950 pt-24 text-white lg:min-h-[100svh] lg:pt-28">
       <div className="absolute inset-0 tech-grid opacity-40" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aqua-500/40 to-transparent" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-8 px-5 lg:grid-cols-2 lg:gap-12 lg:px-8">
+      <div className="relative flex w-full flex-1 items-center pb-12 lg:pb-10">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-8 px-5 lg:grid-cols-2 lg:gap-12 lg:px-8">
         {/* Foto — arriba en mobile, a la derecha en desktop */}
         <motion.div {...fade(0.1)} className="order-1 lg:order-2">
           <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-ink-950/70">
@@ -107,6 +109,9 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+      </div>
+
+      <BrandsMarquee />
     </section>
   )
 }

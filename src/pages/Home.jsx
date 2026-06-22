@@ -1,5 +1,4 @@
 import Hero from '../sections/Hero'
-import BrandsMarquee from '../components/BrandsMarquee'
 import Services from '../sections/Services'
 import Brands from '../sections/Brands'
 import Gallery from '../sections/Gallery'
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <BrandsMarquee />
       <Services />
       <Brands />
       <Gallery />
