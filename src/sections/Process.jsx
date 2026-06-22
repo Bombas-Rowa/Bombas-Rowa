@@ -68,7 +68,7 @@ export default function Process() {
             </span>
             <div>
               <h3 className="font-display text-lg font-bold text-white">
-                Si nos elegís, el diagnóstico te sale gratis
+                La visita técnica se descuenta de la instalación
               </h3>
               <p className="mt-1 text-sm leading-relaxed text-mist-100/75">
                 La visita técnica cuesta {BUSINESS.visitCost} y se descuenta del total
