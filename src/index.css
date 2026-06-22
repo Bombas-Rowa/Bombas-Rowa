@@ -4,6 +4,7 @@
   /* Fonts */
   --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
 
   /* Ink / navy base — confianza, ingeniería */
   --color-ink-950: #050d17;
