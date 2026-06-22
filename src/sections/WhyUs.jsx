@@ -1,18 +1,11 @@
 import Reveal, { SectionHeading } from '../components/Reveal'
-import { BUSINESS } from '../config'
-import {
-  IconShield,
-  IconClock,
-  IconBolt,
-  IconCheck,
-  IconStar,
-} from '../components/Icons'
+import { IconShield, IconClock, IconBolt, IconCheck } from '../components/Icons'
 
 const REASONS = [
   {
     icon: IconShield,
-    title: 'Servicio oficial Rowa',
-    text: 'Trabajamos con productos y repuestos 100% originales. Tu garantía siempre queda en regla.',
+    title: 'Repuestos 100% originales',
+    text: 'Trabajamos con productos y repuestos originales Rowa. Tu garantía siempre queda en regla.',
   },
   {
     icon: IconClock,
@@ -50,19 +43,14 @@ export default function WhyUs() {
                 <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
               </div>
 
-              {/* tarjeta reseñas flotante */}
-              <div className="absolute -bottom-6 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-mist-200 bg-white p-5 shadow-xl">
-                <div className="flex items-center gap-3">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <IconStar key={i} className="h-5 w-5 text-signal-500" />
-                    ))}
-                  </div>
-                  <span className="font-display text-2xl font-extrabold text-ink-900">4.9</span>
-                </div>
-                <p className="mt-1.5 text-sm text-ink-700/75">
-                  Más de <span className="font-bold text-ink-900">300 reseñas</span> de clientes
-                  que recuperaron la presión de su casa.
+              {/* tarjeta de garantía flotante */}
+              <div className="absolute -bottom-6 left-1/2 flex w-[88%] -translate-x-1/2 items-center gap-3 rounded-2xl border border-mist-200 bg-white p-5 shadow-xl">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-aqua-50 text-aqua-600">
+                  <IconShield className="h-6 w-6" />
+                </span>
+                <p className="text-sm text-ink-700/80">
+                  <span className="font-bold text-ink-900">Garantía por escrito</span> y factura en
+                  cada trabajo. Si algo falla, volvemos.
                 </p>
               </div>
             </div>
@@ -73,7 +61,7 @@ export default function WhyUs() {
             <SectionHeading
               eyebrow="Por qué elegirnos"
               title="La tranquilidad de un trabajo bien hecho"
-              description="No vendemos bombas: resolvemos el problema de fondo. Por eso miles de familias y comercios ya confían en nosotros."
+              description="No vendemos bombas: resolvemos el problema de fondo. Te asesoramos con honestidad y dejamos todo funcionando, con garantía por escrito."
             />
 
             <div className="mt-8 space-y-4">
@@ -94,20 +82,20 @@ export default function WhyUs() {
           </div>
         </div>
 
-        {/* Barra de stats */}
+        {/* Barra de compromisos (todo verdadero, sin métricas inventadas) */}
         <Reveal delay={0.1}>
-          <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-mist-200 bg-mist-200 lg:grid-cols-4">
+          <div className="mt-24 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-mist-200 bg-mist-200 lg:grid-cols-4">
             {[
-              { n: `+${BUSINESS.installations.toLocaleString('es-AR')}`, l: 'Equipos instalados' },
-              { n: `${BUSINESS.yearsExperience} años`, l: 'En el rubro' },
-              { n: '24 hs', l: 'Tiempo de respuesta' },
-              { n: '100%', l: 'Repuestos originales' },
-            ].map((s) => (
-              <div key={s.l} className="bg-white px-6 py-8 text-center">
-                <div className="font-display text-3xl font-extrabold text-ink-900 lg:text-4xl">
-                  {s.n}
-                </div>
-                <div className="mt-1 text-sm font-medium text-ink-700/65">{s.l}</div>
+              'Repuestos 100% originales',
+              'Garantía oficial Rowa',
+              'Técnicos matriculados',
+              'Presupuesto exacto, sin sorpresas',
+            ].map((c) => (
+              <div key={c} className="flex items-center gap-3 bg-white px-5 py-6">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-aqua-50 text-aqua-600">
+                  <IconCheck className="h-5 w-5" />
+                </span>
+                <span className="text-sm font-semibold leading-snug text-ink-800">{c}</span>
               </div>
             ))}
           </div>

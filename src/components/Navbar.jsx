@@ -59,7 +59,7 @@ export default function Navbar() {
               {BUSINESS.name}
             </span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-aqua-300">
-              Servicio Oficial Rowa
+              Especialistas en Rowa
             </span>
           </span>
         </Link>

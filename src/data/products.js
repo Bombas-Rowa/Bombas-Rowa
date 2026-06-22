@@ -2,11 +2,12 @@
 // Datos reales tomados del sitio oficial https://bombasrowa.com/
 // (nombres, descripciones y especificaciones técnicas).
 //
-// Las imágenes (`image`) son las fotos oficiales del producto tomadas de
-// bombasrowa.com. Si alguna no cargara, <ProductThumb> usa como respaldo
-// el tile técnico de marca generado por categoría.
+// Las imágenes (`image`) están alojadas localmente en /public/productos/
+// (descargadas del catálogo Rowa). Para cambiar una foto, reemplazá el
+// archivo correspondiente en esa carpeta. Si alguna no cargara, <ProductThumb>
+// usa como respaldo el tile técnico de marca generado por categoría.
 
-const IMG = 'https://bombasrowa.com/app2/arquivos/produtos/imagens/'
+const IMG = '/productos/'
 
 export const CATEGORIES = [
   { id: 'all', label: 'Todos' },
@@ -21,7 +22,7 @@ export const PRODUCTS = [
     id: 'tango-press-24',
     name: 'Rowa Tango Press 24',
     category: 'presurizadores',
-    image: IMG + '1780517990_4a4c5c87b35c37ceb08e.jpg',
+    image: IMG + 'tango-press-24.jpg',
     tagline: 'Más confort en el baño y puntos de consumo',
     badge: 'Más elegida',
     highlight: true,
@@ -48,7 +49,7 @@ export const PRODUCTS = [
     id: 'tango-press-20',
     name: 'Rowa Tango Press 20',
     category: 'presurizadores',
-    image: IMG + '1756123447_9831255a8c60d35b049a.jpg',
+    image: IMG + 'tango-press-20.jpg',
     tagline: 'Presión confiable para departamentos y PH',
     badge: null,
     highlight: false,
@@ -75,7 +76,7 @@ export const PRODUCTS = [
     id: 'tango-sfl-20',
     name: 'Rowa Tango SFL 20',
     category: 'presurizadores',
-    image: IMG + '1755191444_ab74ed4d60424042fb2f.jpg',
+    image: IMG + 'tango-sfl-20.jpg',
     tagline: 'Pensada para instalaciones antiguas',
     badge: 'Silenciosa',
     highlight: false,
@@ -102,7 +103,7 @@ export const PRODUCTS = [
     id: 'inteligent-24',
     name: 'Rowa Inteligent 24',
     category: 'presurizadores',
-    image: IMG + '1690914434_c847192e32fac767308f.jpg',
+    image: IMG + 'inteligent-24.jpg',
     tagline: 'Llena tu tanque de forma automática',
     badge: 'Llenado automático',
     highlight: false,
@@ -129,7 +130,7 @@ export const PRODUCTS = [
     id: 'max-press-30-vf',
     name: 'Rowa Max Press 30 VF',
     category: 'velocidad-variable',
-    image: IMG + '1761595748_48f6d5db60cf65780d5a.jpg',
+    image: IMG + 'max-press-30-vf.jpg',
     tagline: 'Variador de frecuencia: presión constante',
     badge: 'Velocidad variable',
     highlight: true,
@@ -156,7 +157,7 @@ export const PRODUCTS = [
     id: 'max-press-40-vf',
     name: 'Rowa Max Press 40 VF',
     category: 'velocidad-variable',
-    image: IMG + '1761658047_2e8252a54faa309bfb67.jpg',
+    image: IMG + 'max-press-40-vf.jpg',
     tagline: 'Máxima presión para viviendas grandes',
     badge: 'Premium',
     highlight: false,
@@ -183,7 +184,7 @@ export const PRODUCTS = [
     id: 'gpr-vss-2260',
     name: 'Rowa GPR VSS 2260',
     category: 'grupos',
-    image: IMG + '1771414724_118378b844661067c4c3.jpg',
+    image: IMG + 'gpr-vss-2260.jpg',
     tagline: 'Grupo de presión para grandes consumos',
     badge: 'Grandes instalaciones',
     highlight: false,
@@ -210,7 +211,7 @@ export const PRODUCTS = [
     id: 'rw-drain-800-plus',
     name: 'Rowa RW Drain 800 Plus',
     category: 'desagote',
-    image: IMG + '1768415323_8a4ac1fa2128b16aa4f5.jpg',
+    image: IMG + 'rw-drain-800-plus.jpg',
     tagline: 'Sumergible de desagote y drenaje',
     badge: null,
     highlight: false,
@@ -237,7 +238,7 @@ export const PRODUCTS = [
     id: 'rw-drain-1300-plus',
     name: 'Rowa RW Drain 1300 Plus',
     category: 'desagote',
-    image: IMG + '1768487906_e67f842db0043c419506.jpg',
+    image: IMG + 'rw-drain-1300-plus.jpg',
     tagline: 'Sumergible con triturador para aguas sucias',
     badge: 'Con triturador',
     highlight: false,

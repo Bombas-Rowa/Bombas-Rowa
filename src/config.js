@@ -5,7 +5,7 @@
 
 export const BUSINESS = {
   name: 'HidroRowa',
-  tagline: 'Servicio Oficial de Bombas y Presurizadores Rowa',
+  tagline: 'Especialistas en Bombas y Presurizadores Rowa',
 
   // ⚠️ REEMPLAZAR por el número real (formato internacional, sin + ni espacios).
   // Ej. Argentina: 54 9 11 XXXX XXXX  →  '5491122334455'
@@ -15,8 +15,8 @@ export const BUSINESS = {
   email: 'contacto@hidrorowa.com.ar',
   city: 'Buenos Aires y AMBA',
   hours: 'Lun a Sáb · 8:00 a 19:00 hs',
-  yearsExperience: 15,
-  installations: 2300,
+  // Cuando tengan métricas reales (años, instalaciones, reseñas) se pueden
+  // sumar acá y mostrarlas en el sitio. No usar números inventados.
 
   // Visita técnica: el cliente paga este monto por el diagnóstico a domicilio,
   // y se le descuenta del total si avanza con la compra + instalación.

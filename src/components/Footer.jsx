@@ -26,13 +26,13 @@ export default function Footer() {
                   {BUSINESS.name}
                 </span>
                 <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-aqua-300">
-                  Servicio Oficial Rowa
+                  Especialistas en Rowa
                 </span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed">
               {BUSINESS.tagline}. Instalación, venta y reparación de bombas y presurizadores con
-              garantía oficial en {BUSINESS.city}.
+              repuestos originales y garantía en {BUSINESS.city}.
             </p>
             <a
               href={WA_GENERAL}
