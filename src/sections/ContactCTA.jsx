@@ -19,9 +19,8 @@ const CONTACTS = [
 export default function ContactCTA() {
   return (
     <section id="contacto" className="relative overflow-hidden bg-ink-950 py-20 text-white lg:py-28">
-      <div className="absolute inset-0 tech-grid" />
-      <div className="absolute -right-32 top-0 h-[30rem] w-[30rem] rounded-full bg-aqua-600/20 blur-[140px]" />
-      <div className="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-aqua-500/10 blur-[120px]" />
+      <div className="absolute inset-0 tech-grid opacity-60" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aqua-500/40 to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">

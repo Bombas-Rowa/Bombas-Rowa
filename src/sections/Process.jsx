@@ -28,8 +28,8 @@ const STEPS = [
 export default function Process() {
   return (
     <section id="proceso" className="relative overflow-hidden bg-ink-950 py-20 text-white lg:py-28">
-      <div className="absolute inset-0 tech-grid" />
-      <div className="absolute -left-20 top-1/3 h-80 w-80 rounded-full bg-aqua-600/15 blur-[120px]" />
+      <div className="absolute inset-0 tech-grid opacity-60" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aqua-500/40 to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading

@@ -40,9 +40,8 @@ export default function Gallery() {
           className="h-full w-full object-cover opacity-[0.18]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-950/92 to-ink-950" />
-        <div className="absolute inset-0 tech-grid" />
-        <div className="absolute -left-24 top-1/4 h-80 w-80 rounded-full bg-aqua-600/15 blur-[130px]" />
-        <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-aqua-500/10 blur-[120px]" />
+        <div className="absolute inset-0 tech-grid opacity-50" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-aqua-500/40 to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
