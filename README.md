@@ -1,4 +1,4 @@
-# HidroRowa — Sitio de instalación y venta de bombas Rowa
+# Hidrorescate — Servicio técnico de bombas y presurizadores (multimarca)
 
 Landing + catálogo profesional construido con **React + Vite + Tailwind CSS v4** y animaciones con **Framer Motion**. Pensado para generar confianza y derivar consultas a **WhatsApp**.
 

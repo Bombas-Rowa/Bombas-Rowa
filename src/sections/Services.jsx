@@ -17,9 +17,9 @@ const SERVICES = [
   },
   {
     icon: IconTruck,
-    title: 'Venta de equipos Rowa',
-    text: 'Asesoramiento honesto para que compres exactamente la bomba que tu casa necesita. Productos originales con garantía oficial.',
-    points: ['Stock de toda la línea Rowa', 'Repuestos originales', 'Factura y garantía'],
+    title: 'Venta de equipos',
+    text: 'Asesoramiento honesto para que compres exactamente la bomba que tu casa necesita, entre varias marcas y presupuestos.',
+    points: ['Varias marcas y precios', 'Productos originales', 'Factura y garantía'],
   },
   {
     icon: IconWrench,

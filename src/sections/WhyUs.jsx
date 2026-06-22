@@ -5,7 +5,7 @@ const REASONS = [
   {
     icon: IconShield,
     title: 'Repuestos 100% originales',
-    text: 'Trabajamos con productos y repuestos originales Rowa. Tu garantía siempre queda en regla.',
+    text: 'Trabajamos con productos y repuestos originales de cada marca. Tu garantía siempre queda en regla.',
   },
   {
     icon: IconClock,
@@ -87,7 +87,7 @@ export default function WhyUs() {
           <div className="mt-24 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-mist-200 bg-mist-200 lg:grid-cols-4">
             {[
               'Repuestos 100% originales',
-              'Garantía oficial Rowa',
+              'Garantía oficial de fábrica',
               'Técnicos matriculados',
               'Presupuesto exacto, sin sorpresas',
             ].map((c) => (

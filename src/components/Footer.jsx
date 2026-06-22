@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom'
 import { BUSINESS, WA_GENERAL } from '../config'
-import {
-  IconDrop,
-  IconWhatsApp,
-  IconPhone,
-  IconMail,
-  IconPin,
-} from './Icons'
+import { IconWhatsApp, IconPhone, IconMail, IconPin } from './Icons'
+import LogoMark from './LogoMark'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -18,21 +13,21 @@ export default function Footer() {
           {/* Marca */}
           <div className="lg:col-span-5">
             <Link to="/" className="flex items-center gap-2.5">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-aqua-500 text-ink-950">
-                <IconDrop className="h-6 w-6" strokeWidth={1.8} />
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-ink-900 ring-1 ring-inset ring-white/10">
+                <LogoMark className="h-8 w-8" />
               </span>
               <span>
                 <span className="block font-display text-lg font-extrabold text-white">
                   {BUSINESS.name}
                 </span>
                 <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-aqua-300">
-                  Especialistas en Rowa
+                  Servicio técnico multimarca
                 </span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed">
-              {BUSINESS.tagline}. Instalación, venta y reparación de bombas y presurizadores con
-              repuestos originales y garantía en {BUSINESS.city}.
+              Instalación, venta y reparación de bombas y presurizadores de varias marcas, con
+              repuestos originales y garantía en {BUSINESS.city}. {BUSINESS.slogan}
             </p>
             <a
               href={WA_GENERAL}
@@ -96,8 +91,8 @@ export default function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-mist-100/50 sm:flex-row">
           <p>© {year} {BUSINESS.name}. Todos los derechos reservados.</p>
           <p>
-            Rowa es una marca registrada. {BUSINESS.name} es un servicio independiente de
-            instalación y venta.
+            {BUSINESS.name} es un servicio técnico independiente. Las marcas mencionadas
+            (Rowa y otras) pertenecen a sus respectivos titulares.
           </p>
         </div>
       </div>

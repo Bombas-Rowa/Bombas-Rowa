@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BUSINESS, WA_GENERAL } from '../config'
-import { IconDrop, IconWhatsApp, IconMenu, IconClose, IconPhone } from './Icons'
+import { IconWhatsApp, IconMenu, IconClose, IconPhone } from './Icons'
+import LogoMark from './LogoMark'
 
 const LINKS = [
   { label: 'Inicio', to: '/' },
   { label: 'Servicios', to: '/#servicios' },
+  { label: 'Marcas', to: '/#marcas' },
   { label: 'Equipos', to: '/#galeria' },
   { label: 'Cómo trabajamos', to: '/#proceso' },
   { label: 'Contacto', to: '/#contacto' },
@@ -59,15 +61,15 @@ export default function Navbar() {
       <nav className="relative z-50 mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8">
         {/* Logo */}
         <Link to="/" className="group flex items-center gap-2.5">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-aqua-500 text-ink-950 shadow-lg shadow-aqua-500/30 transition-transform group-hover:scale-105">
-            <IconDrop className="h-6 w-6" strokeWidth={1.8} />
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-ink-900 shadow-lg shadow-ink-950/40 ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105">
+            <LogoMark className="h-8 w-8" />
           </span>
           <span className="leading-tight">
             <span className="block font-display text-lg font-extrabold tracking-tight text-white">
               {BUSINESS.name}
             </span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-aqua-300">
-              Especialistas en Rowa
+              Servicio técnico multimarca
             </span>
           </span>
         </Link>

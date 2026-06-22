@@ -52,7 +52,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full bg-aqua-500/10 px-3 py-1.5 text-xs font-semibold text-aqua-200 ring-1 ring-inset ring-aqua-400/25 sm:text-sm"
           >
             <IconShield className="h-4 w-4 shrink-0" />
-            Especialistas en bombas Rowa · {BUSINESS.city}
+            Servicio técnico multimarca · {BUSINESS.city}
           </motion.div>
 
           <motion.h1
@@ -66,9 +66,9 @@ export default function Hero() {
             {...fade(0.16)}
             className="mt-4 max-w-lg text-base leading-relaxed text-mist-100/75 lg:text-lg"
           >
-            Instalamos, vendemos y reparamos bombas y presurizadores{' '}
-            <span className="font-semibold text-white">Rowa</span>. Vamos a tu casa, te
-            asesoramos con honestidad y dejamos todo funcionando.
+            Instalamos, vendemos y reparamos bombas y presurizadores de{' '}
+            <span className="font-semibold text-white">las mejores marcas</span>. Vamos a tu
+            casa, te asesoramos sin vueltas y elegís la opción justa para tu presupuesto.
           </motion.p>
 
           {/* CTAs */}

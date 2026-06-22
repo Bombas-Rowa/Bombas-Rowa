@@ -4,15 +4,18 @@
 // ───────────────────────────────────────────────────────────────
 
 export const BUSINESS = {
-  name: 'HidroRowa',
-  tagline: 'Especialistas en Bombas y Presurizadores Rowa',
+  name: 'Hidrorescate',
+  // Servicio independiente y multimarca (NO somos una marca de bombas).
+  tagline: 'Servicio técnico de bombas y presurizadores · Multimarca',
+  // Eslogan que ataca el dolor (baja presión / quedarse sin agua).
+  slogan: 'Te rescatamos del agua sin presión.',
 
   // ⚠️ REEMPLAZAR por el número real (formato internacional, sin + ni espacios).
   // Ej. Argentina: 54 9 11 XXXX XXXX  →  '5491122334455'
   whatsapp: '5491100000000',
 
   phoneDisplay: '+54 9 11 0000-0000',
-  email: 'contacto@hidrorowa.com.ar',
+  email: 'contacto@hidrorescate.com.ar',
   city: 'Buenos Aires y AMBA',
   hours: 'Lun a Sáb · 8:00 a 19:00 hs',
   // Cuando tengan métricas reales (años, instalaciones, reseñas) se pueden
@@ -22,6 +25,18 @@ export const BUSINESS = {
   // y se le descuenta del total si avanza con la compra + instalación.
   visitCost: '$30.000',
 }
+
+// Marcas con las que trabajan. ⚠️ Reemplazá/completá con la lista REAL.
+// Si tenés el logo en imagen, dejalo en /public/marcas/<archivo> y poné la
+// ruta en `logo`; si no, se muestra el nombre como wordmark.
+export const BRANDS = [
+  { name: 'Rowa', featured: true, note: 'Calidad y respaldo' },
+  { name: 'Motorarg' },
+  { name: 'Czerweny' },
+  { name: 'Gospel' },
+  { name: 'Pedrollo' },
+  { name: 'Grundfos' },
+]
 
 /**
  * Construye un link de WhatsApp con mensaje pre-cargado.
@@ -33,7 +48,7 @@ export function waLink(message) {
 }
 
 export const WA_GENERAL = waLink(
-  `¡Hola ${BUSINESS.name}! Quiero coordinar una visita técnica para un tema de presión de agua / bomba Rowa. ¿Cómo seguimos?`,
+  `¡Hola ${BUSINESS.name}! Quiero coordinar una visita técnica por un tema de presión de agua / bomba. ¿Cómo seguimos?`,
 )
 
 export function waProduct(product) {
