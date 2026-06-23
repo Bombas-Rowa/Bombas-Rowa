@@ -141,6 +141,12 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+/* Más lento en desktop: la cinta es más ancha y se percibe más rápida */
+@media (min-width: 64rem) {
+  .animate-marquee {
+    animation-duration: 90s;
+  }
+}
 .animate-marquee img,
 .animate-marquee span {
   -webkit-transform: translate3d(0, 0, 0);
