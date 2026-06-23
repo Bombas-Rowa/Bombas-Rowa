@@ -19,7 +19,7 @@ const LINKS = [
   { label: 'Inicio', id: 'inicio', icon: IconHome },
   { label: 'Servicios', id: 'servicios', icon: IconTools },
   { label: 'Marcas', id: 'marcas', icon: IconShield },
-  { label: 'Equipos', id: 'galeria', icon: IconTruck },
+  { label: 'Trabajos', id: 'galeria', icon: IconTruck },
   { label: 'Proceso', id: 'proceso', icon: IconGauge },
   { label: 'Contacto', id: 'contacto', icon: IconPhone },
 ]

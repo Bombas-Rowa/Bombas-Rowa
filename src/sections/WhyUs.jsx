@@ -19,28 +19,42 @@ const REASONS = [
   },
 ]
 
+const COMMITMENTS = [
+  'Repuestos 100% originales',
+  'Garantía oficial de fábrica',
+  'Técnicos matriculados',
+  'Presupuesto exacto, sin sorpresas',
+]
+
 export default function WhyUs() {
   return (
-    <section className="relative bg-mist-50 py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+    <section className="relative overflow-hidden bg-mist-50 py-20 lg:py-28">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Imagen + stats */}
+          {/* Foto real de un trabajo */}
           <Reveal>
             <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl border border-mist-200 shadow-xl">
+              {/* halo aqua detrás */}
+              <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-aqua-400/15 blur-2xl" />
+
+              <div className="relative overflow-hidden rounded-3xl border border-mist-200 shadow-2xl shadow-ink-950/15">
                 <img
-                  src="https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?auto=format&fit=crop&w=900&q=80"
-                  alt="Técnico trabajando en una instalación de agua"
-                  className="h-[26rem] w-full object-cover"
+                  src="/fotos/bomba4.png"
+                  alt="Instalación de bomba con conexionado eléctrico hecha por Hidrorescate"
+                  className="h-[24rem] w-full object-cover lg:h-[30rem]"
                   onError={(e) => {
                     e.currentTarget.parentElement.style.background =
                       'linear-gradient(135deg,#0f2438,#0e6a90)'
                     e.currentTarget.style.display = 'none'
                   }}
                 />
-                {/* Tinte para unificar el tono con la paleta del sitio */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-ink-950/55 via-ink-900/10 to-aqua-500/25 mix-blend-multiply" />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-ink-950/5" />
+
+                {/* chip "foto real" */}
+                <span className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full bg-ink-950/70 px-3 py-1.5 text-[11px] font-semibold text-white backdrop-blur-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-aqua-400" />
+                  Trabajo real, no catálogo
+                </span>
               </div>
 
               {/* tarjeta de garantía flotante */}
@@ -56,20 +70,20 @@ export default function WhyUs() {
             </div>
           </Reveal>
 
-          {/* Texto */}
-          <div>
+          {/* Texto + razones */}
+          <div className="lg:pl-2">
             <SectionHeading
               eyebrow="Por qué elegirnos"
               title="La tranquilidad de un trabajo bien hecho"
-              description="No vendemos bombas: resolvemos el problema de fondo. Te asesoramos con honestidad y dejamos todo funcionando, con garantía por escrito."
+              description="No vendemos bombas: resolvemos el problema de fondo. Te asesoramos con honestidad, instalamos prolijo y dejamos todo funcionando, con garantía por escrito."
             />
 
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 divide-y divide-mist-200 overflow-hidden rounded-2xl border border-mist-200 bg-white shadow-sm">
               {REASONS.map((r, i) => (
                 <Reveal key={r.title} delay={i * 0.08}>
-                  <div className="flex gap-4 rounded-2xl border border-mist-200 bg-white p-5 transition-colors hover:border-aqua-300">
-                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-aqua-50 text-aqua-600">
-                      <r.icon className="h-6 w-6" />
+                  <div className="group flex items-start gap-4 p-5 transition-colors hover:bg-aqua-50/40">
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-aqua-400 to-aqua-600 text-ink-950 shadow-md shadow-aqua-500/25">
+                      <r.icon className="h-6 w-6" strokeWidth={1.9} />
                     </span>
                     <div>
                       <h3 className="font-display text-base font-bold text-ink-900">{r.title}</h3>
@@ -82,15 +96,10 @@ export default function WhyUs() {
           </div>
         </div>
 
-        {/* Barra de compromisos (todo verdadero, sin métricas inventadas) */}
+        {/* Barra de compromisos */}
         <Reveal delay={0.1}>
           <div className="mt-24 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-mist-200 bg-mist-200 lg:grid-cols-4">
-            {[
-              'Repuestos 100% originales',
-              'Garantía oficial de fábrica',
-              'Técnicos matriculados',
-              'Presupuesto exacto, sin sorpresas',
-            ].map((c) => (
+            {COMMITMENTS.map((c) => (
               <div key={c} className="flex items-center gap-3 bg-white px-5 py-6">
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-aqua-50 text-aqua-600">
                   <IconCheck className="h-5 w-5" />

@@ -89,7 +89,7 @@ export default function Hero() {
               href="#galeria"
               className="group flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-4 text-base font-bold text-white transition-colors hover:border-aqua-400/60 hover:bg-white/5"
             >
-              Ver equipos
+              Ver trabajos
               <IconArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
@@ -154,7 +154,7 @@ export default function Hero() {
             href="#galeria"
             className="mt-4 flex w-full items-center justify-center gap-1.5 text-sm font-semibold text-mist-100/65"
           >
-            Ver equipos
+            Ver trabajos
             <IconArrowRight className="h-4 w-4" />
           </a>
         </motion.div>
