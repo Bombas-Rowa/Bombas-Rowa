@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BUSINESS, WA_GENERAL } from '../config'
 import { IconWhatsApp, IconMenu, IconClose, IconPhone } from './Icons'
-import LogoMark from './LogoMark'
 
 const LINKS = [
   { label: 'Inicio', to: '/' },
@@ -59,18 +58,16 @@ export default function Navbar() {
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-white/25 to-transparent" />
 
           {/* Logo */}
-          <Link to="/" className="group relative flex items-center gap-2.5">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-ink-900/80 shadow-lg shadow-ink-950/40 ring-1 ring-inset ring-white/15 transition-transform group-hover:scale-105">
-              <LogoMark className="h-8 w-8" />
-            </span>
-            <span className="leading-tight">
-              <span className="block font-display text-lg font-extrabold tracking-tight text-white">
-                {BUSINESS.name}
-              </span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-aqua-300">
-                Servicio técnico multimarca
-              </span>
-            </span>
+          <Link
+            to="/"
+            className="group relative flex items-center"
+            aria-label={`${BUSINESS.name} — Inicio`}
+          >
+            <img
+              src="/hidro-logo.svg"
+              alt={BUSINESS.name}
+              className="h-9 w-auto transition-transform group-hover:scale-[1.03] sm:h-10"
+            />
           </Link>
 
           {/* Links desktop */}
