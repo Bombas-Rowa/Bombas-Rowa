@@ -117,6 +117,13 @@ export const IconMail = (p) => (
   </svg>
 )
 
+export const IconHome = (p) => (
+  <svg viewBox="0 0 24 24" {...base} {...p}>
+    <path d="M4 11.5 12 4l8 7.5" />
+    <path d="M6 10v9h12v-9" />
+  </svg>
+)
+
 export const IconMenu = (p) => (
   <svg viewBox="0 0 24 24" {...base} {...p}>
     <path d="M4 7h16M4 12h16M4 17h16" />
