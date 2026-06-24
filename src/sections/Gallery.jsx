@@ -13,6 +13,7 @@ const TRABAJOS = [
   { src: '/fotos/bomba3.png', label: 'Presurizador con control digital' },
   { src: '/fotos/bomba4.png', label: 'Circulador con tablero eléctrico' },
   { src: '/fotos/bomba2.png', label: 'Bomba recirculadora en cobre' },
+  { src: '/fotos/bomba6.jpg', label: 'Presurizadora Rowa con flujostato' },
 ]
 
 // Galería de TRABAJOS reales sobre fondo navy. Al tocar una foto se abre
@@ -55,8 +56,8 @@ export default function Gallery() {
           {TRABAJOS.map((t, i) => (
             <Reveal
               key={t.src}
-              delay={(i % 5) * 0.06}
-              className="w-[calc(50%-6px)] sm:w-[calc(33.333%-11px)] lg:w-[calc(20%-13px)]"
+              delay={(i % 6) * 0.06}
+              className="w-[calc(50%-6px)] sm:w-[calc(33.333%-11px)] lg:w-[calc(16.666%-14px)]"
             >
               <button
                 onClick={() => setZoom(t)}
