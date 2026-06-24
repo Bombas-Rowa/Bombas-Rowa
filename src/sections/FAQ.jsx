@@ -19,7 +19,7 @@ const FAQS = [
   },
   {
     q: '¿Trabajan con garantía?',
-    a: 'Sí. Todos los equipos que vendemos tienen la garantía oficial de fábrica de su marca, y además garantizamos nuestro trabajo de instalación. Te entregamos factura.',
+    a: 'Sí. Todos los equipos nuevos cuentan con la garantía oficial de su fabricante, y además nosotros te entregamos una garantía escrita por nuestro trabajo de instalación. Te entregamos factura de servicio.',
   },
   {
     q: '¿En qué zonas trabajan?',

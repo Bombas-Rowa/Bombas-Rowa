@@ -48,7 +48,7 @@ export default function Navbar() {
       setActive('')
       return
     }
-    const ids = ['servicios', 'marcas', 'galeria', 'proceso', 'contacto']
+    const ids = ['servicios', 'asesor', 'marcas', 'galeria', 'proceso', 'contacto']
     const onScroll = () => {
       const y = window.scrollY
       if (y + window.innerHeight >= document.documentElement.scrollHeight - 80) {
@@ -58,7 +58,9 @@ export default function Navbar() {
       let current = 'inicio'
       ids.forEach((id) => {
         const el = document.getElementById(id)
-        if (el && y >= el.offsetTop - 150) current = id
+        if (el && y >= el.offsetTop - 150) {
+          current = id === 'asesor' ? 'servicios' : id
+        }
       })
       setActive(current)
     }

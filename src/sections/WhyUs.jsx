@@ -21,7 +21,7 @@ const REASONS = [
 
 const COMMITMENTS = [
   'Repuestos 100% originales',
-  'Garantía oficial de fábrica',
+  'Garantía por escrito',
   'Técnicos matriculados',
   'Presupuesto exacto, sin sorpresas',
 ]
@@ -75,7 +75,7 @@ export default function WhyUs() {
             <SectionHeading
               eyebrow="Por qué elegirnos"
               title="La tranquilidad de un trabajo bien hecho"
-              description="No vendemos bombas: resolvemos el problema de fondo. Te asesoramos con honestidad, instalamos prolijo y dejamos todo funcionando, con garantía por escrito."
+              description="No somos revendedores de catálogo: resolvemos problemas de presión de agua. Te asesoramos con honestidad técnica y realizamos instalaciones seguras y prolijas, respaldadas por nuestra garantía escrita."
             />
 
             <div className="mt-8 divide-y divide-mist-200 overflow-hidden rounded-2xl border border-mist-200 bg-white shadow-sm">

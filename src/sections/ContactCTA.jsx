@@ -40,10 +40,9 @@ export default function ContactCTA() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-mist-100/75">
-                Contanos qué necesitás y agendamos una visita técnica para darte un
-                presupuesto exacto. La visita cuesta {BUSINESS.visitCost} y{' '}
+                No hacemos estimaciones por teléfono que luego cambian. Medimos caudal y presión real en tu domicilio para darte un presupuesto exacto. La visita cuesta {BUSINESS.visitCost} y{' '}
                 <span className="font-semibold text-aqua-200">
-                  se descuenta si avanzás con la instalación.
+                  se bonifica al 100% si realizás el trabajo con nosotros.
                 </span>
               </p>
             </Reveal>

@@ -41,8 +41,8 @@ export default function Hero() {
                 <IconShield className="h-5 w-5" />
               </span>
               <div className="leading-tight">
-                <div className="text-xs font-bold">Trabajos garantizados</div>
-                <div className="text-[11px] text-ink-700/70">Repuestos 100% originales</div>
+                <div className="text-xs font-bold">Garantía por escrito</div>
+                <div className="text-[11px] text-ink-700/70">Fotos 100% reales de trabajos</div>
               </div>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function Hero() {
             {...fade(0.3)}
             className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-5 text-sm text-mist-100/70"
           >
-            {['Presupuesto exacto en tu casa', 'Técnicos matriculados', 'Garantía oficial'].map(
+            {['Garantía por escrito', 'Fotos 100% reales', 'Presupuesto exacto sin sorpresas', 'Técnicos matriculados'].map(
               (t) => (
                 <span key={t} className="flex items-center gap-2">
                   <IconCheck className="h-4 w-4 text-aqua-400" />
@@ -163,7 +163,7 @@ export default function Hero() {
           {...fade(0.3)}
           className="relative mt-8 space-y-2.5 border-t border-white/10 pt-5"
         >
-          {['Presupuesto exacto en tu casa', 'Técnicos matriculados', 'Garantía oficial de fábrica'].map(
+          {['Garantía por escrito de instalación', 'Fotos 100% reales de trabajos', 'Presupuesto exacto sin sorpresas', 'Técnicos matriculados'].map(
             (t) => (
               <li key={t} className="flex items-center gap-2.5 text-sm text-mist-100/80">
                 <IconCheck className="h-4 w-4 shrink-0 text-aqua-400" />
