@@ -37,16 +37,22 @@ const FAQS = [
 
 function Item({ faq, open, onToggle }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-mist-200 bg-white">
+    <div
+      className={`overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${
+        open
+          ? 'border-aqua-400/80 shadow-md shadow-aqua-500/5'
+          : 'border-mist-200/90 hover:border-aqua-200 hover:shadow-sm'
+      }`}
+    >
       <button
         onClick={onToggle}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-mist-50"
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-mist-50/30"
       >
         <span className="font-display text-base font-bold text-ink-900">{faq.q}</span>
         <span
           className={`grid h-8 w-8 shrink-0 place-items-center rounded-full transition-all ${
-            open ? 'bg-aqua-500 text-ink-950' : 'bg-mist-100 text-ink-700'
+            open ? 'bg-aqua-500 text-ink-950 shadow-md shadow-aqua-500/25' : 'bg-mist-100 text-ink-700'
           }`}
         >
           <IconChevron className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} />
@@ -66,7 +72,7 @@ function Item({ faq, open, onToggle }) {
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }
 
 export default function FAQ() {

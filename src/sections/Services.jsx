@@ -48,31 +48,38 @@ export default function Services() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08}>
-              <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-mist-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-aqua-300 hover:shadow-xl hover:shadow-aqua-500/10">
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-mist-200/90 bg-gradient-to-b from-white to-mist-50/30 p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-aqua-300 hover:shadow-xl hover:shadow-aqua-500/10">
+                {/* Destello radial sutil en hover */}
+                <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-0">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,166,212,0.04)_0%,transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                </div>
+
                 {/* número fantasma */}
-                <span className="pointer-events-none absolute -right-2 -top-5 font-display text-7xl font-extrabold text-mist-100 transition-colors group-hover:text-aqua-50">
+                <span className="pointer-events-none absolute -right-2 -top-5 font-display text-7xl font-extrabold text-mist-100/50 transition-colors group-hover:text-aqua-50/70 z-0">
                   {String(i + 1).padStart(2, '0')}
                 </span>
 
-                <span className="relative grid h-13 w-13 place-items-center rounded-xl bg-ink-900 p-3 text-aqua-300 transition-colors group-hover:bg-aqua-500 group-hover:text-ink-950">
-                  <s.icon className="h-7 w-7" />
-                </span>
+                <div className="relative z-10 flex flex-col h-full">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-ink-900 text-aqua-300 transition-all duration-300 group-hover:bg-aqua-500 group-hover:text-ink-950 group-hover:scale-105 shadow-md shadow-ink-950/20">
+                    <s.icon className="h-6 w-6" />
+                  </span>
 
-                <h3 className="relative mt-5 font-display text-xl font-bold text-ink-900">
-                  {s.title}
-                </h3>
-                <p className="relative mt-2 text-sm leading-relaxed text-ink-700/75">
-                  {s.text}
-                </p>
+                  <h3 className="mt-5 font-display text-xl font-bold text-ink-900 transition-colors group-hover:text-aqua-600">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-700/75 flex-1">
+                    {s.text}
+                  </p>
 
-                <ul className="relative mt-4 space-y-1.5 border-t border-mist-100 pt-4">
-                  {s.points.map((p) => (
-                    <li key={p} className="flex items-center gap-2 text-xs font-medium text-ink-700/70">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-aqua-400" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="mt-5 space-y-1.5 border-t border-mist-100 pt-4">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex items-center gap-2 text-xs font-semibold text-ink-700/70">
+                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-aqua-400 group-hover:scale-110 transition-transform" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             </Reveal>
           ))}
