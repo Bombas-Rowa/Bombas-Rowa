@@ -53,23 +53,26 @@ export default function Brands() {
                 className={`w-full md:w-auto ${isLastOdd ? 'col-span-2' : ''}`}
               >
                 <div
-                  className={`group relative flex h-24 w-full md:w-44 flex-col items-center justify-center gap-1 rounded-2xl border overflow-hidden px-5 text-center transition-all duration-500 ${
+                  className={`group relative flex h-24 w-full md:w-44 flex-col items-center justify-center gap-1 rounded-2xl border px-5 text-center transition-all duration-500 ${
                     b.featured
                       ? 'border-aqua-300 bg-gradient-to-b from-white to-aqua-50/15 shadow-md shadow-aqua-500/5 hover:border-aqua-400 hover:shadow-xl hover:shadow-aqua-500/12'
                       : 'border-mist-200/90 bg-gradient-to-b from-white to-mist-50/20 shadow-sm shadow-mist-200/20 hover:border-aqua-200 hover:shadow-lg hover:shadow-aqua-500/6'
                   } hover:-translate-y-1.5 hover:scale-[1.02]`}
                 >
-                  {/* Destello radial sutil en hover */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,166,212,0.06)_0%,transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none z-0" />
+                  {/* Contenedor interno con overflow-hidden para recortar el destello de fondo sin recortar el badge superior */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-0">
+                    {/* Destello radial sutil en hover */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,166,212,0.06)_0%,transparent_65%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  </div>
                   
                   {b.featured && (
-                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full border border-aqua-200 bg-white px-2.5 py-0.5 text-[8px] font-extrabold uppercase tracking-wider text-aqua-700 shadow-sm shadow-aqua-500/5 z-10">
+                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full border border-aqua-200 bg-white px-2.5 py-0.5 text-[8px] font-extrabold uppercase tracking-wider text-aqua-700 shadow-sm shadow-aqua-500/5 z-20">
                       <span className="h-1.5 w-1.5 rounded-full bg-aqua-500 animate-pulse" />
                       Recomendada
                     </span>
                   )}
                   
-                  {/* Contenedor para posicionar encima del destello */}
+                  {/* Contenedor de contenido por encima del z-index del destello */}
                   <div className="relative z-10 flex flex-col items-center justify-center gap-1 w-full">
                     <BrandLogo brand={b} />
                     {b.note && (
