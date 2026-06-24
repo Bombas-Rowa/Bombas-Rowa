@@ -50,10 +50,14 @@ export default function Gallery() {
           description="Presurizadores, recirculadores y grupos de presión de distintas marcas, instalados con plomería prolija y conexionado seguro. Sin fotos de catálogo: esto es trabajo nuestro."
         />
 
-        {/* Grilla de fotos */}
-        <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+        {/* Grilla de fotos flexbox auto-centrada */}
+        <div className="mt-14 flex flex-wrap justify-center gap-3 sm:gap-4">
           {TRABAJOS.map((t, i) => (
-            <Reveal key={t.src} delay={(i % 5) * 0.06}>
+            <Reveal
+              key={t.src}
+              delay={(i % 5) * 0.06}
+              className="w-[calc(50%-6px)] sm:w-[calc(33.333%-11px)] lg:w-[calc(20%-13px)]"
+            >
               <button
                 onClick={() => setZoom(t)}
                 className="group relative block w-full overflow-hidden rounded-2xl border border-white/10 bg-ink-900 shadow-lg shadow-ink-950/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-aqua-500/20 hover:ring-2 hover:ring-aqua-400/60"
