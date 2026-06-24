@@ -4,7 +4,8 @@ import { BRANDS } from '../config'
 import { IconCheck } from '../components/Icons'
 
 // Logo de marca: usa la imagen (brand.logo en /public/marcas/)
-// Los SVG ya vienen listos en color blanco nativo, por lo que no requieren filtros de inversión.
+// Para que se vea profesional y pareja en fondo claro, la normalizamos a un gris neutro
+// elegante usando un filtro de brillo 0 (negro) con opacidad. En hover, cobra mayor intensidad.
 function BrandLogo({ brand }) {
   const [failed, setFailed] = useState(false)
   if (brand.logo && !failed) {
@@ -13,12 +14,12 @@ function BrandLogo({ brand }) {
         src={brand.logo}
         alt={brand.name}
         onError={() => setFailed(true)}
-        className="max-h-9 w-auto max-w-[130px] object-contain opacity-75 transition-all duration-300 group-hover:scale-105 group-hover:opacity-100 select-none pointer-events-none"
+        className="max-h-8.5 w-auto max-w-[130px] object-contain [filter:brightness(0)] opacity-40 transition-all duration-300 group-hover:scale-103 group-hover:opacity-75 select-none pointer-events-none"
       />
     )
   }
   return (
-    <span className="font-display text-lg font-extrabold tracking-tight text-white/80 transition-colors group-hover:text-white">
+    <span className="font-display text-base font-extrabold tracking-tight text-ink-900/50 transition-colors group-hover:text-ink-900/80">
       {brand.name}
     </span>
   )
@@ -26,16 +27,12 @@ function BrandLogo({ brand }) {
 
 export default function Brands() {
   return (
-    <section id="marcas" className="relative overflow-hidden bg-ink-950 py-20 text-white lg:py-28">
-      {/* Fondo tecnológico y gradientes premium */}
-      <div className="absolute inset-0 tech-grid opacity-35" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900/15 to-ink-950" />
-      <div className="absolute -left-48 top-1/4 h-96 w-96 rounded-full bg-aqua-500/5 blur-[120px]" />
-      <div className="absolute -right-48 bottom-1/4 h-96 w-96 rounded-full bg-aqua-500/5 blur-[120px]" />
+    <section id="marcas" className="relative bg-mist-50 py-20 lg:py-28">
+      {/* Fondo limpio con detalles de diseño sutiles */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#0884b1_1px,transparent_1px)] [background-size:16px_16px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
-          dark
           center
           eyebrow="Multimarca"
           title="Trabajamos con las mejores marcas"
@@ -52,20 +49,20 @@ export default function Brands() {
                 className={`w-full sm:w-auto ${isLastOdd ? 'col-span-2' : ''}`}
               >
                 <div
-                  className={`group relative flex h-28 w-full sm:w-44 flex-col items-center justify-center gap-2 rounded-2xl border px-5 text-center transition-all duration-300 backdrop-blur-sm ${
+                  className={`group relative flex h-24 w-full sm:w-44 flex-col items-center justify-center gap-1 rounded-2xl border px-5 text-center transition-all duration-300 ${
                     b.featured
-                      ? 'border-aqua-500/55 bg-aqua-500/[0.03] ring-1 ring-aqua-500/25 hover:bg-aqua-500/[0.07] hover:shadow-[0_15px_30px_rgba(6,166,212,0.15)]'
-                      : 'border-white/8 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04] hover:shadow-xl hover:shadow-black/20'
-                  } hover:-translate-y-1.5`}
+                      ? 'border-aqua-400 bg-white shadow-md shadow-aqua-500/5 hover:border-aqua-500 hover:shadow-lg hover:shadow-aqua-500/10'
+                      : 'border-mist-200/80 bg-white shadow-sm shadow-mist-200/30 hover:border-aqua-300 hover:shadow-md hover:shadow-aqua-500/5'
+                  } hover:-translate-y-1`}
                 >
                   {b.featured && (
-                    <span className="absolute -top-2.5 rounded-full bg-aqua-500 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-ink-950 shadow-md shadow-aqua-500/25">
+                    <span className="absolute -top-2.5 rounded-full bg-aqua-500 px-2.5 py-0.5 text-[8px] font-extrabold uppercase tracking-wider text-ink-950 shadow-sm shadow-aqua-500/20">
                       Recomendada
                     </span>
                   )}
                   <BrandLogo brand={b} />
                   {b.note && (
-                    <span className="text-[10px] font-semibold tracking-wide uppercase text-aqua-300/80">
+                    <span className="text-[9px] font-bold tracking-wide uppercase text-aqua-600">
                       {b.note}
                     </span>
                   )}
@@ -76,8 +73,8 @@ export default function Brands() {
         </div>
 
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-12 flex max-w-2xl items-center justify-center gap-2.5 text-center text-sm text-mist-100/60">
-            <IconCheck className="h-4.5 w-4.5 shrink-0 text-aqua-400" />
+          <p className="mx-auto mt-12 flex max-w-2xl items-center justify-center gap-2.5 text-center text-sm text-ink-700/60">
+            <IconCheck className="h-4.5 w-4.5 shrink-0 text-aqua-500" />
             Productos y repuestos 100% originales, con garantía oficial de cada fabricante.
           </p>
         </Reveal>
