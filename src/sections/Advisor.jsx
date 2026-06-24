@@ -126,46 +126,46 @@ export default function Advisor() {
 
     if (problem === 'bomba_falla') {
       return {
-        title: 'Diagnóstico técnico de tu bomba actual',
-        desc: 'Tu equipo actual requiere una revisión para evaluar el estado eléctrico y mecánico. Mediremos capacitores, presostatos/flujostatos y rodamientos para determinar si es viable repararla con repuestos oficiales o si conviene su reemplazo.',
-        recommendation: 'Servicio de Reparación y Service Técnico',
-        details: ['Diagnóstico físico en tu casa con instrumental de precisión.', 'Repuestos originales.', 'Si decidís repararla o cambiarla con nosotros, bonificamos la visita.'],
+        title: 'Revisión y diagnóstico físico de tu equipo',
+        desc: 'Tu bomba o presurizador actual requiere una medición física en el lugar. Para evitar un gasto innecesario en un motor nuevo, el técnico mediremos el consumo eléctrico (amperaje), el estado del capacitor de arranque, el presostato/flujostato y los rodamientos mecánicos.',
+        recommendation: 'Diagnóstico Técnico en Domicilio',
+        details: ['Verificación de componentes eléctricos y desgaste.', 'Prueba hidráulica de sensores de arranque.', 'Si realizás la reparación o cambio con nosotros, la visita se bonifica $0.'],
       }
     }
 
     if (problem === 'tanque_lento') {
       return {
-        title: 'Presurización / Llenado inteligente de tanque',
-        desc: 'Para que el tanque elevado se llene rápido, de forma silenciosa y sin riesgo de quemar motores por falta de agua de red, recomendamos una bomba elevadora inteligente (ej. Rowa Inteligente 20 o similar). Detecta la llegada de agua sola y no funciona si la red está vacía.',
-        recommendation: 'Línea Rowa Inteligente 20 (o similar)',
-        details: ['Funcionamiento automático según presión de red.', 'Consumo eléctrico optimizado.', 'Silencio absoluto durante el llenado.'],
+        title: 'Llenado inteligente de tanque (Elevadora)',
+        desc: 'Sugerimos un sistema elevador inteligente (ej. tipo Rowa Inteligente 20). Sin embargo, el caudal real de entrada de la red pública y la altura geométrica de tu casa deben ser verificados por un profesional para garantizar que el motor no trabaje en seco y evitar daños.',
+        recommendation: 'Bomba Elevadora (A verificar caudal de red)',
+        details: ['Cálculo de altura geométrica y fricción de tuberías.', 'Medición de presión de entrada de red de agua.', 'El costo de la visita técnica se descuenta del total del trabajo.'],
       }
     }
 
     if (problem === 'agua_caliente') {
       return {
-        title: 'Presurización directa bajo calefón o termotanque',
-        desc: 'Si tenés buena presión general pero el agua caliente sale débil, recomendamos una bomba presurizadora de flujo (ej. Rowa Tango SFL 9 o SFL 14) instalada directo bajo tu calefón. Se activa solo cuando abrís la canilla de agua caliente y evita presurizar cañerías viejas.',
-        recommendation: 'Rowa Tango SFL 9 / SFL 14 (o similar)',
-        details: ['Se instala directo antes del calefón.', 'No deja la cañería bajo presión constante.', 'Arranque automático al abrir la ducha.'],
+        title: 'Presurización puntual bajo termotanque/calefón',
+        desc: 'Sugerimos una presurizadora de flujo bajo calefón (ej. tipo SFL 9 o 14). No obstante, si la serpentina del calefón está tapada por sarro, la bomba no se activará o podría dañarse. Es indispensable que un técnico evalúe la obstrucción real antes de instalar.',
+        recommendation: 'Línea de Flujo SFL (A confirmar obstrucción)',
+        details: ['Medición de caudal mínimo de activación en canillas.', 'Verificación de estado interno del calentador.', 'La visita se bonifica en tu factura si avanzás con la instalación.'],
       }
     }
 
     // poca_presion general
     if (plants === '2_plantas' || showers === '2_duchas' || showers === '3_mas') {
       return {
-        title: 'Presurización inteligente para toda la casa',
-        desc: 'Para abastecer con presión constante 2 o más plantas y varios consumos en simultáneo, recomendamos un sistema presurizador (ej. Rowa Tango Press 20 o Rowa Max Press 26). Mantiene la presión uniforme en toda la vivienda sin fluctuaciones.',
-        recommendation: 'Rowa Tango Press 20 / Max Press 26',
-        details: ['Presión constante incluso abriendo varios baños.', 'Ideal para tanque cisterna o elevado.', 'Equipo robusto de alta durabilidad.'],
+        title: 'Presurización general (Viviendas múltiples plantas)',
+        desc: 'Sugerimos un presurizador general (ej. tipo Tango Press 20 o Max Press). Sin embargo, la presión constante somete a las tuberías antiguas a un esfuerzo continuo. Es crítico evaluar la resistencia de tus caños empotrados antes para evitar fugas invisibles.',
+        recommendation: 'Presurizador de Presión (Sujeto a estanqueidad)',
+        details: ['Evaluación preventiva de resistencia de cañerías viejas.', 'Cálculo de caudal simultáneo necesario para tus baños.', 'La visita técnica de diagnóstico se descuenta al realizar la obra.'],
       }
     }
 
     return {
-      title: 'Presurización compacta y silenciosa',
-      desc: 'Para una casa de una planta o PH con consumo moderado, una bomba compacta de flujo o presión (ej. Rowa Tango SFL 9 o Press 20) es ideal. Te dará una ducha abundante y resolverá la escasez de agua sin sobredimensionar el equipo ni gastar de más.',
-      recommendation: 'Rowa Tango SFL 9 / Tango Press 20',
-      details: ['Bajo consumo y tamaño compacto.', 'Operación 100% silenciosa.', 'Presión justa para griferías monocomando.'],
+      title: 'Presurización general (Vivienda planta baja / PH)',
+      desc: 'Sugerimos un equipo compacto de flujo o presión (ej. tipo Tango SFL o Press 20). Pero si tus cañerías son muy antiguas o de plomo, el tipo de presurización incorrecto puede fisurar los codos. Un técnico debe diagnosticar la fragilidad hidráulica primero.',
+      recommendation: 'Presurizador Compacto (Sujeto a tipo de caño)',
+      details: ['Inspección del material de la cañería (plomo, bronce, fusión).', 'Medición de caudal y presión de confort adecuada.', 'El pago de la visita técnica se bonifica al contratar el servicio.'],
     }
   }
 
@@ -325,7 +325,7 @@ export default function Advisor() {
               >
                 <div className="border-b border-white/5 pb-4 text-center sm:text-left">
                   <span className="inline-block rounded-full bg-aqua-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-aqua-300 ring-1 ring-inset ring-aqua-400/30">
-                    Sugerencia preliminar
+                    Pre-Diagnóstico Preliminar
                   </span>
                   <h3 className="mt-3 font-display text-2xl font-black text-white">
                     {rec.title}
@@ -338,24 +338,37 @@ export default function Advisor() {
                       {rec.desc}
                     </p>
 
+                    {/* Alerta crítica: por qué es obligatoria la visita y por qué no hay que comprar a ciegas */}
+                    <div className="rounded-2xl border border-signal-500/35 bg-signal-500/5 p-4">
+                      <div className="flex items-center gap-2 text-signal-400">
+                        <span className="h-2 w-2 rounded-full bg-signal-400 animate-pulse" />
+                        <span className="text-xs font-extrabold uppercase tracking-wider">
+                          ¡Atención! Evitá un error costoso
+                        </span>
+                      </div>
+                      <p className="mt-2 text-xs leading-relaxed text-white/75">
+                        La presión de agua <strong>no se estima por internet: se mide físicamente.</strong> Comprar una bomba en base a una estimación teórica puede provocar que revientes caños antiguos dentro de las paredes o que el equipo falle y anule su garantía de fábrica. Exigí siempre una medición real a domicilio.
+                      </p>
+                    </div>
+
                     <div className="rounded-2xl border border-white/5 bg-ink-900/60 p-4">
                       <div className="flex items-center gap-2.5 text-aqua-300">
                         <IconShield className="h-5 w-5 shrink-0" />
                         <span className="text-xs font-bold uppercase tracking-wider">
-                          Nuestra garantía de asesoría
+                          Transparencia en el diagnóstico
                         </span>
                       </div>
                       <p className="mt-2 text-xs leading-relaxed text-white/55">
-                        No realizamos presupuestos estimativos que cambian al llegar. Vamos a tu casa, medimos presión y caudal, y te damos el valor cerrado. Si avanzás con la instalación, descontamos los {BUSINESS.visitCost} de la visita técnica.
+                        El costo de la visita técnica ({BUSINESS.visitCost}) es para cubrir el diagnóstico físico con manómetro y caudalímetro. <strong>Si decidís hacer el trabajo con nosotros, te descontamos el 100% de la visita en la factura final.</strong>
                       </p>
                     </div>
                   </div>
 
                   <div className="rounded-2xl border border-aqua-500/20 bg-aqua-500/[0.02] p-5 md:col-span-2">
                     <h4 className="font-display text-sm font-bold uppercase tracking-wider text-aqua-300">
-                      Solución Propuesta
+                      Sugerencia de Equipo
                     </h4>
-                    <div className="mt-2 font-display text-lg font-extrabold text-white">
+                    <div className="mt-2 font-display text-lg font-extrabold text-white leading-tight">
                       {rec.recommendation}
                     </div>
 
@@ -385,7 +398,7 @@ export default function Advisor() {
                     className="flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-whatsapp px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-whatsapp/30 transition-transform hover:scale-[1.03]"
                   >
                     <IconWhatsApp className="h-5 w-5" />
-                    Enviar diagnóstico y coordinar visita
+                    Agendar medición y presupuesto exacto
                   </a>
                 </div>
               </motion.div>
