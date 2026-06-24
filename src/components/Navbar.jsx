@@ -138,7 +138,7 @@ export default function Navbar() {
             <img
               src="/hidro-logo.svg"
               alt={BUSINESS.name}
-              className="h-8.5 w-auto transition-all duration-300 hover:scale-105 active:scale-95 sm:h-10"
+              className="h-[30px] w-auto transition-all duration-300 hover:scale-105 active:scale-95 sm:h-10"
             />
           </Link>
 
