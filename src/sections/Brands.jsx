@@ -36,28 +36,35 @@ export default function Brands() {
           description="No te atamos a una sola opción. Te ofrecemos Rowa por su calidad y respaldo, y otras marcas reconocidas para que elijas según tu presupuesto. Siempre te asesoramos para que compres lo justo."
         />
 
-        <div className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-4">
-          {BRANDS.map((b, i) => (
-            <Reveal key={b.name} delay={(i % 4) * 0.05}>
-              <div
-                className={`group relative flex h-28 w-44 flex-col items-center justify-center gap-2 rounded-2xl border bg-ink-900 px-5 text-center transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-ink-950/20 ${
-                  b.featured
-                    ? 'border-aqua-400/60 ring-1 ring-aqua-400/40'
-                    : 'border-white/10'
-                }`}
+        <div className="mx-auto mt-14 grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:justify-center">
+          {BRANDS.map((b, i) => {
+            const isLastOdd = i === BRANDS.length - 1 && BRANDS.length % 2 !== 0
+            return (
+              <Reveal
+                key={b.name}
+                delay={(i % 4) * 0.05}
+                className={`w-full sm:w-auto ${isLastOdd ? 'col-span-2' : ''}`}
               >
-                {b.featured && (
-                  <span className="absolute -top-2.5 rounded-full bg-aqua-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-950">
-                    Recomendada
-                  </span>
-                )}
-                <BrandLogo brand={b} />
-                {b.note && (
-                  <span className="text-[11px] font-medium text-aqua-200/70">{b.note}</span>
-                )}
-              </div>
-            </Reveal>
-          ))}
+                <div
+                  className={`group relative flex h-28 w-full sm:w-44 flex-col items-center justify-center gap-2 rounded-2xl border bg-ink-900 px-5 text-center transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-ink-950/20 ${
+                    b.featured
+                      ? 'border-aqua-400/60 ring-1 ring-aqua-400/40'
+                      : 'border-white/10'
+                  }`}
+                >
+                  {b.featured && (
+                    <span className="absolute -top-2.5 rounded-full bg-aqua-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-ink-950">
+                      Recomendada
+                    </span>
+                  )}
+                  <BrandLogo brand={b} />
+                  {b.note && (
+                    <span className="text-[11px] font-medium text-aqua-200/70">{b.note}</span>
+                  )}
+                </div>
+              </Reveal>
+            )
+          })}
         </div>
 
         <Reveal delay={0.1}>
