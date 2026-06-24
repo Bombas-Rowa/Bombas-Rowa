@@ -39,17 +39,21 @@ export default function Brands() {
           description="No te atamos a una sola opción. Te ofrecemos Rowa por su calidad y respaldo, y otras marcas reconocidas para que elijas la opción justa para tu presupuesto."
         />
 
-        <div className="mx-auto mt-14 grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:justify-center">
+        {/* 
+          En mobile: grid de 2 columnas (para que no quede larga la sección).
+          En desktop (md+): flexbox centrado con ancho máximo de 800px para forzar una fila de 4 y otra de 3.
+        */}
+        <div className="mx-auto mt-14 grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-center md:max-w-[800px]">
           {BRANDS.map((b, i) => {
             const isLastOdd = i === BRANDS.length - 1 && BRANDS.length % 2 !== 0
             return (
               <Reveal
                 key={b.name}
                 delay={(i % 4) * 0.05}
-                className={`w-full sm:w-auto ${isLastOdd ? 'col-span-2' : ''}`}
+                className={`w-full md:w-auto ${isLastOdd ? 'col-span-2' : ''}`}
               >
                 <div
-                  className={`group relative flex h-24 w-full sm:w-44 flex-col items-center justify-center gap-1 rounded-2xl border px-5 text-center transition-all duration-300 ${
+                  className={`group relative flex h-24 w-full md:w-44 flex-col items-center justify-center gap-1 rounded-2xl border px-5 text-center transition-all duration-300 ${
                     b.featured
                       ? 'border-aqua-400 bg-white shadow-md shadow-aqua-500/5 hover:border-aqua-500 hover:shadow-lg hover:shadow-aqua-500/10'
                       : 'border-mist-200/80 bg-white shadow-sm shadow-mist-200/30 hover:border-aqua-300 hover:shadow-md hover:shadow-aqua-500/5'
