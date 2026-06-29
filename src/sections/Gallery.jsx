@@ -8,11 +8,11 @@ import { IconWhatsApp, IconClose, IconArrowRight } from '../components/Icons'
 // Fotos reales de trabajos hechos por el equipo (en /public/fotos).
 // Si alguna descripción no es exacta, se edita acá nomás.
 const TRABAJOS = [
-  { src: '/fotos/bomba1.png', label: 'Grupo presurizador instalado' },
-  { src: '/fotos/bomba5.png', label: 'Grupo de presión multietapa' },
-  { src: '/fotos/bomba3.png', label: 'Presurizador con control digital' },
-  { src: '/fotos/bomba4.png', label: 'Circulador con tablero eléctrico' },
-  { src: '/fotos/bomba2.png', label: 'Bomba recirculadora en cobre' },
+  { src: '/fotos/bomba1.webp', label: 'Grupo presurizador instalado' },
+  { src: '/fotos/bomba5.webp', label: 'Grupo de presión multietapa' },
+  { src: '/fotos/bomba3.webp', label: 'Presurizador con control digital' },
+  { src: '/fotos/bomba4.webp', label: 'Circulador con tablero eléctrico' },
+  { src: '/fotos/bomba2.webp', label: 'Bomba recirculadora en cobre' },
   { src: '/fotos/bomba6.jpg', label: 'Presurizadora Rowa con flujostato' },
 ]
 

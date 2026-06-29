@@ -36,7 +36,7 @@ export default function WhyUs() {
 
               <div className="relative overflow-hidden rounded-3xl border border-slate-200/60 shadow-xl bg-white">
                 <img
-                  src="/fotos/bomba4.png"
+                  src="/fotos/bomba4.webp"
                   alt="Instalación de bomba con conexionado eléctrico hecha por Hidrorescate"
                   className="h-[26rem] w-full object-cover lg:h-[32rem]"
                   onError={(e) => {
