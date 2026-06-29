@@ -24,7 +24,7 @@ export default function Hero() {
             <div className="aspect-[16/9] lg:aspect-auto">
               <img
                 src="/hero5.jpeg"
-                alt="Bomba de agua Rowa instalada con sus cañerías"
+                alt="Bomba de agua instalada con sus cañerías por Hidrorescate"
                 className="h-full w-full object-cover lg:h-auto lg:max-h-[58vh]"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'

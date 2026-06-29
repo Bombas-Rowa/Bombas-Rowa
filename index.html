@@ -1,47 +1,132 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a1929" />
     <meta name="color-scheme" content="only light" />
+
+    <title>Bombas y Presurizadores en Buenos Aires y AMBA | Hidrorescate</title>
     <meta
       name="description"
-      content="Hidrorescate: servicio técnico de bombas y presurizadores, multimarca. Instalación, venta y reparación con visita a domicilio y presupuesto exacto. Te rescatamos del agua sin presión en Buenos Aires y AMBA."
+      content="Instalación, venta y reparación de bombas y presurizadores en Buenos Aires y AMBA. Servicio técnico multimarca, visita a domicilio y presupuesto exacto. Te rescatamos del agua sin presión."
     />
-    <meta name="keywords" content="bombas de agua, presurizadoras, presurizador, más presión de agua, instalación de bombas, reparación de bombas, bomba quemada, sin agua, Rowa, multimarca, Buenos Aires, AMBA" />
-    <title>Hidrorescate · Bombas y Presurizadores — Servicio Técnico Multimarca</title>
+    <link rel="canonical" href="https://hidrorescate.com.ar/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Hidrorescate" />
+
+    <!-- hreflang (un solo idioma/región) -->
+    <link rel="alternate" hreflang="es-ar" href="https://hidrorescate.com.ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://hidrorescate.com.ar/" />
 
     <!-- Open Graph / redes sociales -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:site_name" content="Hidrorescate" />
-    <meta property="og:title" content="Hidrorescate · Servicio Técnico de Bombas y Presurizadores" />
-    <meta property="og:description" content="Te rescatamos del agua sin presión. Instalación, venta y reparación de bombas de varias marcas, con visita a domicilio y presupuesto exacto." />
+    <meta property="og:url" content="https://hidrorescate.com.ar/" />
+    <meta property="og:title" content="Hidrorescate · Bombas y Presurizadores — Servicio Técnico Multimarca" />
+    <meta property="og:description" content="Te rescatamos del agua sin presión. Instalación, venta y reparación de bombas de varias marcas en Buenos Aires y AMBA, con visita a domicilio y presupuesto exacto." />
+    <meta property="og:image" content="https://hidrorescate.com.ar/hero5.jpeg" />
+    <meta property="og:image:alt" content="Bomba de agua instalada por Hidrorescate" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Hidrorescate · Bombas y Presurizadores Multimarca" />
-    <meta name="twitter:description" content="Te rescatamos del agua sin presión. Servicio técnico multimarca con visita a domicilio y presupuesto exacto." />
+    <meta name="twitter:description" content="Te rescatamos del agua sin presión. Servicio técnico multimarca en Buenos Aires y AMBA, con visita a domicilio y presupuesto exacto." />
+    <meta name="twitter:image" content="https://hidrorescate.com.ar/hero5.jpeg" />
 
-    <!-- Datos estructurados: negocio local (mejora SEO y confianza) -->
+    <!-- Datos estructurados: negocio local + sitio + preguntas frecuentes -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "PlumbingBusiness",
-        "name": "Hidrorescate",
-        "description": "Servicio técnico independiente de bombas y presurizadores, multimarca. Instalación, venta y reparación a domicilio.",
-        "areaServed": "Buenos Aires y AMBA",
-        "priceRange": "$$",
-        "telephone": "+54 9 11 0000-0000",
-        "email": "contacto@hidrorescate.com.ar",
-        "openingHours": "Mo-Sa 08:00-19:00",
-        "makesOffer": {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Instalación, venta y reparación de bombas y presurizadores"
+        "@graph": [
+          {
+            "@type": ["PlumbingBusiness", "LocalBusiness"],
+            "@id": "https://hidrorescate.com.ar/#business",
+            "name": "Hidrorescate",
+            "url": "https://hidrorescate.com.ar/",
+            "image": "https://hidrorescate.com.ar/hero5.jpeg",
+            "logo": "https://hidrorescate.com.ar/hidro-logo.svg",
+            "description": "Servicio técnico independiente y multimarca de bombas y presurizadores. Instalación, venta y reparación a domicilio en Buenos Aires y AMBA.",
+            "telephone": "+5491168698390",
+            "email": "contacto@hidrorescate.com.ar",
+            "priceRange": "$$",
+            "currenciesAccepted": "ARS",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Buenos Aires",
+              "addressRegion": "Buenos Aires",
+              "addressCountry": "AR"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": -34.6037, "longitude": -58.3816 },
+            "areaServed": [
+              { "@type": "City", "name": "Ciudad Autónoma de Buenos Aires" },
+              { "@type": "AdministrativeArea", "name": "Gran Buenos Aires (AMBA)" }
+            ],
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "08:00",
+                "closes": "19:00"
+              }
+            ],
+            "makesOffer": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instalación de bombas y presurizadores" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Venta de bombas y presurizadores (multimarca)" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reparación y service de bombas" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoramiento técnico a domicilio" } }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://hidrorescate.com.ar/#website",
+            "url": "https://hidrorescate.com.ar/",
+            "name": "Hidrorescate",
+            "inLanguage": "es-AR",
+            "publisher": { "@id": "https://hidrorescate.com.ar/#business" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://hidrorescate.com.ar/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cómo es la visita técnica y cuánto cuesta?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Un técnico matriculado va a tu casa, revisa tu instalación y mide presión y caudal para darte un presupuesto exacto. La visita tiene un costo de $30.000 y, si decidís avanzar con la compra e instalación, ese monto se descuenta del total." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Por qué la visita tiene un costo?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Porque hacemos un diagnóstico real, no un número aproximado por teléfono. Yendo a tu casa medimos la situación exacta y te aseguramos que comprás justo lo que necesitás. Y como el costo se descuenta si avanzás, no pagás de más por el asesoramiento." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo sé qué bomba necesito?",
+                "acceptedAnswer": { "@type": "Answer", "text": "En la visita evaluamos tu instalación y te recomendamos el equipo justo para tu casa, según la cantidad de baños, pisos y el problema que tengas. Sin venderte de más." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Trabajan con garantía?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todos los equipos nuevos cuentan con la garantía oficial de su fabricante, y además te entregamos una garantía escrita por nuestro trabajo de instalación, con factura de servicio." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿En qué zonas trabajan?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Cubrimos Capital Federal y todo el AMBA. Si estás un poco más lejos, escribinos igual y vemos cómo ayudarte." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Reparan bombas de otras marcas?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sí, reparamos bombas y presurizadores de la mayoría de las marcas del mercado. Hacemos el diagnóstico y te decimos si conviene reparar o reemplazar." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto tardan en instalar?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Una instalación estándar de presurizadora se resuelve en el mismo día, generalmente en 1 a 2 horas. Coordinamos día y horario que te quede cómodo." }
+              }
+            ]
           }
-        }
+        ]
       }
     </script>
 
@@ -51,6 +136,8 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Precarga de la imagen principal del Hero (solo desktop) para mejorar LCP -->
+    <link rel="preload" as="image" href="/hero5.jpeg" media="(min-width: 1024px)" />
   </head>
   <body>
     <div id="root"></div>
