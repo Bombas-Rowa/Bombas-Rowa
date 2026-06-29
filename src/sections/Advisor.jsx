@@ -10,6 +10,8 @@ import {
   IconWhatsApp,
   IconCheck,
   IconShield,
+  IconRotate,
+  IconAlert,
 } from '../components/Icons'
 
 const STEPS = [
@@ -126,46 +128,46 @@ export default function Advisor() {
 
     if (problem === 'bomba_falla') {
       return {
-        title: 'Revisión y diagnóstico físico de tu equipo',
-        desc: 'Tu bomba o presurizador actual requiere una medición física en el lugar. Para evitar un gasto innecesario en un motor nuevo, el técnico mediremos el consumo eléctrico (amperaje), el estado del capacitor de arranque, el presostato/flujostato y los rodamientos mecánicos.',
-        recommendation: 'Diagnóstico Técnico en Domicilio',
-        details: ['Verificación de componentes eléctricos y desgaste.', 'Prueba hidráulica de sensores de arranque.', 'Si realizás la reparación o cambio con nosotros, la visita se bonifica $0.'],
+        title: 'Ficha de Inspección: Diagnóstico de Equipo Existente',
+        desc: 'Tu presurizador o bomba actual presenta fallas. No compres un motor nuevo a ciegas: un diagnóstico físico profesional permitirá evaluar si es reparable, si requiere un capacitor de arranque nuevo, o si es indispensable su reemplazo.',
+        recommendation: 'Rango: Diagnóstico Mecánico / Eléctrico',
+        details: ['Medición de bobinado y capacitor de arranque.', 'Evaluación del presostato/flujostato detector.', 'Prueba hidráulica de estanqueidad.'],
       }
     }
 
     if (problem === 'tanque_lento') {
       return {
-        title: 'Llenado inteligente de tanque (Elevadora)',
-        desc: 'Sugerimos un sistema elevador inteligente (ej. tipo Rowa Inteligente 20). Sin embargo, el caudal real de entrada de la red pública y la altura geométrica de tu casa deben ser verificados por un profesional para garantizar que el motor no trabaje en seco y evitar daños.',
-        recommendation: 'Bomba Elevadora (A verificar caudal de red)',
-        details: ['Cálculo de altura geométrica y fricción de tuberías.', 'Medición de presión de entrada de red de agua.', 'El costo de la visita técnica se descuenta del total del trabajo.'],
+        title: 'Ficha de Inspección: Sistema de Llenado (Elevación)',
+        desc: 'Se pre-diagnostica la necesidad de un sistema elevador (rango 0.5 a 1.0 HP). No obstante, es mandatorio verificar el caudal real de entrada de la red pública y la altura geométrica de tu casa antes de comprar o instalar para evitar que el motor trabaje en seco.',
+        recommendation: 'Rango: Elevadora Inteligente (0.5 a 1.0 HP)',
+        details: ['Medición de caudal de entrada en L/min.', 'Cálculo de altura geométrica y pérdida por fricción.', 'Control de presión dinámica en cañería de subida.'],
       }
     }
 
     if (problem === 'agua_caliente') {
       return {
-        title: 'Presurización puntual bajo termotanque/calefón',
-        desc: 'Sugerimos una presurizadora de flujo bajo calefón (ej. tipo SFL 9 o 14). No obstante, si la serpentina del calefón está tapada por sarro, la bomba no se activará o podría dañarse. Es indispensable que un técnico evalúe la obstrucción real antes de instalar.',
-        recommendation: 'Línea de Flujo SFL (A confirmar obstrucción)',
-        details: ['Medición de caudal mínimo de activación en canillas.', 'Verificación de estado interno del calentador.', 'La visita se bonifica en tu factura si avanzás con la instalación.'],
+        title: 'Ficha de Inspección: Presurización de Agua Caliente',
+        desc: 'Se pre-diagnostica la necesidad de un presurizador de flujo en la línea caliente (rango compacto). Sin embargo, si la serpentina del calefón está tapada por sarro, la bomba no encenderá o se quemará. Debemos medir el caudal de activación en ducha.',
+        recommendation: 'Rango: Presurizador de Flujo Compacto',
+        details: ['Medición de caudal mínimo de activación en ducha.', 'Verificación de obstrucción interna (sarro) en el calentador.', 'Control de temperatura de salida para proteger sensores.'],
       }
     }
 
     // poca_presion general
     if (plants === '2_plantas' || showers === '2_duchas' || showers === '3_mas') {
       return {
-        title: 'Presurización general (Viviendas múltiples plantas)',
-        desc: 'Sugerimos un presurizador general (ej. tipo Tango Press 20 o Max Press). Sin embargo, la presión constante somete a las tuberías antiguas a un esfuerzo continuo. Es crítico evaluar la resistencia de tus caños empotrados antes para evitar fugas invisibles.',
-        recommendation: 'Presurizador de Presión (Sujeto a estanqueidad)',
-        details: ['Evaluación preventiva de resistencia de cañerías viejas.', 'Cálculo de caudal simultáneo necesario para tus baños.', 'La visita técnica de diagnóstico se descuenta al realizar la obra.'],
+        title: 'Ficha de Inspección: Presurización General Alta Demanda',
+        desc: 'Se pre-diagnostica un presurizador general de mediana/alta potencia. La presión constante somete a las tuberías antiguas a un esfuerzo continuo. Es crítico evaluar la resistencia de tus caños empotrados mediante prueba de estanqueidad antes de instalar.',
+        recommendation: 'Rango: Presurizador General (Tango o similar)',
+        details: ['Prueba hidráulica de resistencia en cañerías viejas.', 'Cálculo de caudal simultáneo para baños y cocina.', 'Medición de presión de confort ideal para griferías monocomando.'],
       }
     }
 
     return {
-      title: 'Presurización general (Vivienda planta baja / PH)',
-      desc: 'Sugerimos un equipo compacto de flujo o presión (ej. tipo Tango SFL o Press 20). Pero si tus cañerías son muy antiguas o de plomo, el tipo de presurización incorrecto puede fisurar los codos. Un técnico debe diagnosticar la fragilidad hidráulica primero.',
-      recommendation: 'Presurizador Compacto (Sujeto a tipo de caño)',
-      details: ['Inspección del material de la cañería (plomo, bronce, fusión).', 'Medición de caudal y presión de confort adecuada.', 'El pago de la visita técnica se bonifica al contratar el servicio.'],
+      title: 'Ficha de Inspección: Presurización General Estándar',
+      desc: 'Se pre-diagnostica un presurizador general de flujo o presión. Si las cañerías son muy antiguas o de plomo/bronce, el tipo de presurización incorrecto puede fisurar los codos de las paredes. Es obligatorio que el técnico verifique el material hidráulico.',
+      recommendation: 'Rango: Presurizador de Flujo o Presión',
+      details: ['Inspección ocular del material (plomo, latón, termofusión).', 'Prueba de fugas invisibles (hermeticidad de la instalación).', 'Control de válvulas de retención existentes.'],
     }
   }
 
@@ -174,13 +176,17 @@ export default function Advisor() {
     const plLabel = STEPS[1].options.find((o) => o.id === answers.plants)?.label || ''
     const sLabel = STEPS[2].options.find((o) => o.id === answers.showers)?.label || ''
     
-    let text = `¡Hola ${BUSINESS.name}! Hice la consulta en el Asesor de la Web:\n`
+    // Generar un código semi-aleatorio basado en las respuestas para darle aspecto formal
+    const codeId = `${answers.problem ? answers.problem.substring(0,3).toUpperCase() : 'GEN'}-${answers.plants ? answers.plants.charAt(0).toUpperCase() : 'X'}${answers.showers ? answers.showers.charAt(0).toUpperCase() : 'X'}`
+
+    let text = `¡Hola ${BUSINESS.name}! Completé el pre-diagnóstico técnico en la web y quiero agendar la visita a domicilio.\n\n`
+    text += `📋 *REPORTE PRELIMINAR #${codeId}*\n`
     text += `- Problema: ${pLabel}\n`
     if (answers.problem !== 'bomba_falla' && answers.problem !== 'tanque_lento') {
       text += `- Estructura: ${plLabel}\n`
-      text += `- Duchas: ${sLabel}\n`
+      text += `- Duchas simultáneas: ${sLabel}\n`
     }
-    text += `Quiero coordinar la visita técnica a domicilio para que midan presión y me den el presupuesto exacto.`
+    text += `\nSolicito coordinar la visita técnica de diagnóstico físico a domicilio (${BUSINESS.visitCost}) para medir presión/caudal real y validar la instalación.`
     
     return waLink(text)
   }
@@ -199,54 +205,74 @@ export default function Advisor() {
         <SectionHeading
           dark
           center
-          eyebrow="Asesoramiento sin cargo"
+          eyebrow="Pre-Diagnóstico Virtual"
           title="¿Qué bomba necesita tu casa?"
-          description="Respondé estas preguntas rápidas para entender tu situación técnica. No vendemos humo: te asesoramos con la verdad antes de ir a tu casa."
+          description="Respondé estas preguntas rápidas para generar tu ficha técnica preliminar y coordinar la validación física con nuestro especialista."
         />
 
-        <div className="mt-12 flex items-center justify-between px-2 sm:px-8">
-          {[...STEPS, { title: 'Resultado' }].map((s, idx) => {
-            const isActive = idx <= step
-            const isCurrent = idx === step
-            return (
-              <div key={idx} className="flex flex-1 items-center last:flex-none">
-                <div className="relative flex flex-col items-center">
-                  <div
-                    className={`flex h-8 w-8 items-center justify-center rounded-full border text-xs font-bold transition-all duration-300 ${
+        {/* Barra de progreso segmentada */}
+        <div className="mt-12 space-y-4">
+          <div className="flex gap-2.5">
+            {[...Array(STEPS.length + 1)].map((_, idx) => {
+              const isActive = idx <= step
+              const isCurrent = idx === step
+              return (
+                <div
+                  key={idx}
+                  className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-white/10"
+                >
+                  <motion.div
+                    className={`absolute inset-0 rounded-full ${
                       isCurrent
-                        ? 'border-aqua-400 bg-aqua-500 text-ink-950 ring-4 ring-aqua-500/20'
-                        : isActive
-                        ? 'border-aqua-500 bg-aqua-500/20 text-aqua-300'
-                        : 'border-white/10 bg-ink-900 text-white/40'
+                        ? 'bg-gradient-to-r from-aqua-500 to-aqua-300'
+                        : 'bg-aqua-500'
                     }`}
-                  >
-                    {idx === STEPS.length ? (
-                      <IconCheck className="h-4 w-4" />
-                    ) : (
-                      idx + 1
-                    )}
-                  </div>
-                  <span
-                    className={`absolute top-10 hidden text-[11px] font-semibold tracking-tight sm:block ${
-                      isCurrent ? 'text-aqua-300 font-bold' : isActive ? 'text-white/80' : 'text-white/30'
-                    }`}
-                  >
-                    {idx === STEPS.length ? 'Resultado' : `Paso ${idx + 1}`}
-                  </span>
-                </div>
-                {idx < STEPS.length && (
-                  <div
-                    className={`h-0.5 w-full mx-2 transition-all duration-300 ${
-                      idx < step ? 'bg-aqua-500' : 'bg-white/10'
-                    }`}
+                    initial={{ width: 0 }}
+                    animate={{ width: isActive ? '100%' : '0%' }}
+                    transition={{ duration: 0.4, ease: 'easeOut' }}
                   />
-                )}
-              </div>
-            )
-          })}
+                  {isCurrent && (
+                    <motion.div
+                      className="absolute inset-0 bg-white/30"
+                      animate={{ opacity: [0.2, 0.6, 0.2] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                    />
+                  )}
+                </div>
+              )
+            })}
+          </div>
+          
+          {/* Etiqueta de estado unificada */}
+          <div className="h-6 overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={step}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="text-center"
+              >
+                <span className="font-mono text-xs font-extrabold uppercase tracking-[0.25em] text-aqua-400">
+                  {step === STEPS.length ? (
+                    'Ficha Técnica Generada'
+                  ) : (
+                    `Paso ${step + 1} de ${STEPS.length} · ${
+                      step === 0
+                        ? 'Diagnóstico del Problema'
+                        : step === 1
+                        ? 'Estructura de la Vivienda'
+                        : 'Uso de Agua Caliente/Sanitaria'
+                    }`
+                  )}
+                </span>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
-        <div className="mt-16 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl sm:p-10 aqua-glow">
+        <div className="mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl sm:p-10 aqua-glow">
           <AnimatePresence mode="wait">
             {step < STEPS.length ? (
               <motion.div
@@ -323,13 +349,21 @@ export default function Advisor() {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <div className="border-b border-white/5 pb-4 text-center sm:text-left">
-                  <span className="inline-block rounded-full bg-aqua-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-aqua-300 ring-1 ring-inset ring-aqua-400/30">
-                    Pre-Diagnóstico Preliminar
-                  </span>
-                  <h3 className="mt-3 font-display text-2xl font-black text-white">
-                    {rec.title}
-                  </h3>
+                <div className="flex flex-col items-center justify-between border-b border-white/5 pb-5 sm:flex-row gap-4">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2 justify-center sm:justify-start">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-signal-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-signal-400 ring-1 ring-inset ring-signal-500/35 animate-pulse">
+                        <IconAlert className="h-3.5 w-3.5" />
+                        Ficha Técnica Preliminar
+                      </span>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/55">
+                        Estado: Requiere Validación Física
+                      </span>
+                    </div>
+                    <h3 className="mt-3 text-center sm:text-left font-display text-2xl font-black text-white">
+                      {rec.title}
+                    </h3>
+                  </div>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-5">
@@ -338,67 +372,124 @@ export default function Advisor() {
                       {rec.desc}
                     </p>
 
-                    {/* Alerta crítica: por qué es obligatoria la visita y por qué no hay que comprar a ciegas */}
-                    <div className="rounded-2xl border border-signal-500/35 bg-signal-500/5 p-4">
-                      <div className="flex items-center gap-2 text-signal-400">
-                        <span className="h-2 w-2 rounded-full bg-signal-400 animate-pulse" />
-                        <span className="text-xs font-extrabold uppercase tracking-wider">
-                          ¡Atención! Evitá un error costoso
-                        </span>
+                    {/* Relevamientos obligatorios con instrumental técnico */}
+                    <div className="rounded-2xl border border-white/5 bg-ink-900/40 p-5 space-y-4">
+                      <h4 className="font-display text-xs font-extrabold uppercase tracking-widest text-aqua-300">
+                        🔍 Mediciones requeridas en domicilio
+                      </h4>
+                      <div className="grid gap-3.5 sm:grid-cols-2">
+                        <div className="flex items-start gap-3 rounded-xl border border-white/[0.03] bg-white/[0.01] p-3">
+                          <div className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded border border-signal-500/50 bg-signal-500/10 text-signal-400">
+                            <span className="h-1.5 w-1.5 rounded-full bg-signal-400 animate-pulse" />
+                          </div>
+                          <div>
+                            <h5 className="text-xs font-bold text-white">Presión Estática (Manómetro)</h5>
+                            <p className="mt-0.5 text-[11px] text-white/40 leading-relaxed">
+                              Medición de bares reales para evitar sobre-presión que rompa cañerías antiguas o codos empotrados.
+                            </p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-start gap-3 rounded-xl border border-white/[0.03] bg-white/[0.01] p-3">
+                          <div className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded border border-signal-500/50 bg-signal-500/10 text-signal-400">
+                            <span className="h-1.5 w-1.5 rounded-full bg-signal-400 animate-pulse" />
+                          </div>
+                          <div>
+                            <h5 className="text-xs font-bold text-white">Caudal de Red (Caudalímetro)</h5>
+                            <p className="mt-0.5 text-[11px] text-white/40 leading-relaxed">
+                              Medición de litros/minuto para certificar que el motor no trabaje en seco y se termine quemando.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3 rounded-xl border border-white/[0.03] bg-white/[0.01] p-3">
+                          <div className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded border border-signal-500/50 bg-signal-500/10 text-signal-400">
+                            <span className="h-1.5 w-1.5 rounded-full bg-signal-400 animate-pulse" />
+                          </div>
+                          <div>
+                            <h5 className="text-xs font-bold text-white">Prueba de Hermeticidad</h5>
+                            <p className="mt-0.5 text-[11px] text-white/40 leading-relaxed">
+                              Detección de micro-fugas en griferías o válvulas que hagan arrancar la bomba sola y desgasten el motor.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start gap-3 rounded-xl border border-white/[0.03] bg-white/[0.01] p-3">
+                          <div className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded border border-signal-500/50 bg-signal-500/10 text-signal-400">
+                            <span className="h-1.5 w-1.5 rounded-full bg-signal-400 animate-pulse" />
+                          </div>
+                          <div>
+                            <h5 className="text-xs font-bold text-white">Chequeo Eléctrico (Amperaje)</h5>
+                            <p className="mt-0.5 text-[11px] text-white/40 leading-relaxed">
+                              Verificación de sección de cable y amperaje máximo para evitar sobrecalentamiento y cortocircuitos.
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <p className="mt-2 text-xs leading-relaxed text-white/75">
-                        La presión de agua <strong>no se estima por internet: se mide físicamente.</strong> Comprar una bomba en base a una estimación teórica puede provocar que revientes caños antiguos dentro de las paredes o que el equipo falle y anule su garantía de fábrica. Exigí siempre una medición real a domicilio.
-                      </p>
                     </div>
 
                     <div className="rounded-2xl border border-white/5 bg-ink-900/60 p-4">
                       <div className="flex items-center gap-2.5 text-aqua-300">
                         <IconShield className="h-5 w-5 shrink-0" />
                         <span className="text-xs font-bold uppercase tracking-wider">
-                          Transparencia en el diagnóstico
+                          Reembolso de la Visita Técnica
                         </span>
                       </div>
                       <p className="mt-2 text-xs leading-relaxed text-white/55">
-                        El costo de la visita técnica ({BUSINESS.visitCost}) es para cubrir el diagnóstico físico con manómetro y caudalímetro. <strong>Si decidís hacer el trabajo con nosotros, te descontamos el 100% de la visita en la factura final.</strong>
+                        El costo de la visita técnica ({BUSINESS.visitCost}) cubre el traslado y las mediciones con instrumental. <strong>Si decidís avanzar con el trabajo, te descontamos el 100% de la visita en la factura final.</strong> Te termina saliendo gratis.
                       </p>
                     </div>
                   </div>
 
-                  <div className="rounded-2xl border border-aqua-500/20 bg-aqua-500/[0.02] p-5 md:col-span-2">
-                    <h4 className="font-display text-sm font-bold uppercase tracking-wider text-aqua-300">
-                      Sugerencia de Equipo
-                    </h4>
-                    <div className="mt-2 font-display text-lg font-extrabold text-white leading-tight">
-                      {rec.recommendation}
-                    </div>
+                  <div className="rounded-2xl border border-aqua-500/20 bg-aqua-500/[0.02] p-5 md:col-span-2 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-aqua-400" />
+                        <h4 className="font-display text-xs font-extrabold uppercase tracking-wider text-aqua-300">
+                          Rango de Equipamiento Estimado
+                        </h4>
+                      </div>
+                      <div className="mt-2.5 font-display text-lg font-extrabold text-white leading-tight">
+                        {rec.recommendation}
+                      </div>
+                      <p className="mt-2 text-[11px] leading-relaxed text-white/40 italic">
+                        *Sujeto a confirmación por el especialista. No recomendado para compra directa sin antes auditar la instalación.*
+                      </p>
 
-                    <ul className="mt-4 space-y-2.5">
-                      {rec.details.map((d, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs text-white/70">
-                          <IconCheck className="h-4 w-4 shrink-0 text-aqua-400 mt-0.5" />
-                          <span>{d}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      <div className="mt-5 border-t border-white/5 pt-4">
+                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-aqua-400">
+                          Tareas a realizar por el técnico:
+                        </span>
+                        <ul className="mt-2 space-y-2.5">
+                          {rec.details.map((d, i) => (
+                            <li key={i} className="flex items-start gap-2.5 text-xs text-white/70">
+                              <IconCheck className="h-4 w-4 shrink-0 text-aqua-400 mt-0.5" />
+                              <span>{d}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3 pt-4 border-t border-white/5 sm:flex-row justify-between items-center">
+                <div className="flex flex-col gap-4 pt-4 border-t border-white/5 sm:flex-row justify-between items-center">
                   <button
                     onClick={reset}
-                    className="text-xs font-bold text-white/55 hover:text-aqua-300 transition-colors"
+                    className="flex items-center gap-2 text-xs font-bold text-white/50 hover:text-aqua-300 transition-colors order-2 sm:order-1"
                   >
-                    🔄 Volver a empezar
+                    <IconRotate className="h-4 w-4" />
+                    Volver a empezar
                   </button>
 
                   <a
                     href={buildWhatsAppLink()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-whatsapp px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-whatsapp/30 transition-transform hover:scale-[1.03]"
+                    className="flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-whatsapp px-6 py-4 text-sm font-bold text-white shadow-lg shadow-whatsapp/30 transition-transform hover:scale-[1.02] order-1 sm:order-2"
                   >
                     <IconWhatsApp className="h-5 w-5" />
-                    Agendar medición y presupuesto exacto
+                    Agendar Visita de Validación Física ({BUSINESS.visitCost})
                   </a>
                 </div>
               </motion.div>

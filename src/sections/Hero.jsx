@@ -86,10 +86,10 @@ export default function Hero() {
               Coordinar visita técnica
             </a>
             <a
-              href="#galeria"
+              href="#asesor"
               className="group flex items-center justify-center gap-2 rounded-xl border border-white/20 px-6 py-4 text-base font-bold text-white transition-colors hover:border-aqua-400/60 hover:bg-white/5"
             >
-              Ver trabajos
+              Iniciar Pre-Diagnóstico
               <IconArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </motion.div>
@@ -151,21 +151,21 @@ export default function Hero() {
             Coordinar visita técnica
           </a>
           <a
-            href="#galeria"
+            href="#asesor"
             className="mt-4 flex w-full items-center justify-center gap-1.5 text-sm font-semibold text-mist-100/65"
           >
-            Ver trabajos
+            Iniciar Pre-Diagnóstico
             <IconArrowRight className="h-4 w-4" />
           </a>
         </motion.div>
 
         <motion.ul
           {...fade(0.3)}
-          className="relative mt-8 space-y-2.5 border-t border-white/10 pt-5"
+          className="relative mt-8 grid grid-cols-2 gap-x-4 gap-y-3.5 border-t border-white/10 pt-5"
         >
-          {['Garantía por escrito de instalación', 'Fotos 100% reales de trabajos', 'Presupuesto exacto sin sorpresas', 'Técnicos matriculados'].map(
+          {['Garantía por escrito', 'Fotos 100% reales', 'Presupuesto exacto', 'Técnicos matriculados'].map(
             (t) => (
-              <li key={t} className="flex items-center gap-2.5 text-sm text-mist-100/80">
+              <li key={t} className="flex items-center gap-2 text-xs sm:text-sm text-mist-100/80">
                 <IconCheck className="h-4 w-4 shrink-0 text-aqua-400" />
                 {t}
               </li>

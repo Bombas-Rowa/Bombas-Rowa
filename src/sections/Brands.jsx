@@ -14,7 +14,7 @@ function BrandLogo({ brand }) {
         src={brand.logo}
         alt={brand.name}
         onError={() => setFailed(true)}
-        className="max-h-8.5 w-auto max-w-[130px] object-contain [filter:brightness(0)] opacity-35 transition-all duration-300 group-hover:scale-103 group-hover:opacity-75 select-none pointer-events-none"
+        className="max-h-6.5 md:max-h-8.5 w-auto max-w-[100px] md:max-w-[130px] object-contain [filter:brightness(0)] opacity-35 transition-all duration-300 group-hover:scale-103 group-hover:opacity-75 select-none pointer-events-none"
       />
     )
   }
@@ -53,7 +53,7 @@ export default function Brands() {
                 className={`w-full md:w-auto ${isLastOdd ? 'col-span-2' : ''}`}
               >
                 <div
-                  className={`group relative flex h-24 w-full md:w-44 flex-col items-center justify-center gap-1 rounded-2xl border px-5 text-center transition-all duration-500 ${
+                  className={`group relative flex h-20 md:h-24 w-full md:w-44 flex-col items-center justify-center gap-1 rounded-2xl border px-5 text-center transition-all duration-500 ${
                     b.featured
                       ? 'border-aqua-300 bg-gradient-to-b from-white to-aqua-50/15 shadow-md shadow-aqua-500/5 hover:border-aqua-400 hover:shadow-xl hover:shadow-aqua-500/12'
                       : 'border-mist-200/90 bg-gradient-to-b from-white to-mist-50/20 shadow-sm shadow-mist-200/20 hover:border-aqua-200 hover:shadow-lg hover:shadow-aqua-500/6'

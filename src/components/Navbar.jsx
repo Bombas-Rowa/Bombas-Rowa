@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BUSINESS, WA_GENERAL } from '../config'
+import LogoMark from './LogoMark'
 import {
   IconWhatsApp,
   IconMenu,
@@ -17,9 +18,7 @@ import {
 const LINKS = [
   { label: 'Inicio', id: 'inicio', icon: IconHome },
   { label: 'Servicios', id: 'servicios', icon: IconTools },
-  { label: 'Marcas', id: 'marcas', icon: IconShield },
   { label: 'Trabajos', id: 'galeria', icon: IconTruck },
-  { label: 'Proceso', id: 'proceso', icon: IconGauge },
   { label: 'Contacto', id: 'contacto', icon: IconPhone },
 ]
 
@@ -59,7 +58,13 @@ export default function Navbar() {
       ids.forEach((id) => {
         const el = document.getElementById(id)
         if (el && y >= el.offsetTop - 150) {
-          current = id === 'asesor' ? 'servicios' : id
+          if (id === 'asesor' || id === 'marcas') {
+            current = 'servicios'
+          } else if (id === 'proceso') {
+            current = 'galeria'
+          } else {
+            current = id
+          }
         }
       })
       setActive(current)
@@ -137,11 +142,16 @@ export default function Navbar() {
             aria-label={`${BUSINESS.name} — Inicio`}
             className="flex shrink-0 items-center pl-1"
           >
+            {/* Logo de marca completo para desktop */}
             <img
               src="/hidro-logo.svg"
               alt={BUSINESS.name}
-              className="h-[30px] w-auto transition-all duration-300 hover:scale-105 active:scale-95 sm:h-10"
+              className="hidden h-10 w-auto transition-all duration-300 hover:scale-105 active:scale-95 sm:block"
             />
+            {/* Isologo (icono) solo para mobile */}
+            <div className="block h-8 w-8 text-aqua-400 sm:hidden">
+              <LogoMark className="h-full w-full" />
+            </div>
           </Link>
 
           {/* Mobile: indicador de la sección actual (Floating status pill) */}

@@ -88,18 +88,18 @@ export default function ContactCTA() {
                 Elegí el canal que más te convenga.
               </p>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <div className="mt-6 flex flex-col divide-y divide-white/5 border-y border-white/5 py-1 sm:grid sm:grid-cols-2 sm:gap-3 sm:divide-y-0 sm:border-y-0 sm:py-0">
                 {CONTACTS.map((c) => {
                   const Inner = (
-                    <div className="flex items-start gap-3 rounded-2xl border border-white/8 bg-ink-900/50 p-4 transition-colors hover:border-aqua-400/40">
+                    <div className="flex items-center gap-4 py-4 sm:rounded-2xl sm:border sm:border-white/8 sm:bg-ink-900/50 sm:p-4 hover:border-aqua-400/40 transition-colors">
                       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-aqua-500/15 text-aqua-300">
                         <c.icon className="h-5 w-5" />
                       </span>
                       <div className="min-w-0">
-                        <div className="text-xs font-semibold uppercase tracking-wide text-mist-100/50">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-mist-100/40 sm:text-xs">
                           {c.label}
                         </div>
-                        <div className="mt-0.5 truncate font-semibold text-white">{c.value}</div>
+                        <div className="mt-0.5 break-words text-sm font-semibold text-white sm:text-base">{c.value}</div>
                       </div>
                     </div>
                   )

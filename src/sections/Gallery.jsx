@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Reveal, { SectionHeading } from '../components/Reveal'
@@ -20,6 +20,39 @@ const TRABAJOS = [
 // un lightbox para verla en grande (respetando su proporción real).
 export default function Gallery() {
   const [zoom, setZoom] = useState(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+  const scrollRef = useRef(null)
+
+  const handleScroll = (e) => {
+    const scrollPosition = e.currentTarget.scrollLeft
+    const cardWidth = e.currentTarget.clientWidth * 0.8
+    const index = Math.round(scrollPosition / (cardWidth + 16))
+    setActiveSlide(index)
+  }
+
+  // Autoplay para el carrusel de mobile
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    const interval = setInterval(() => {
+      // Solo deslizar si es mobile (el contenedor tiene scroll horizontal activo)
+      if (container.scrollWidth <= container.clientWidth) return
+
+      setActiveSlide((prev) => {
+        const next = (prev + 1) % TRABAJOS.length
+        const cardWidth = container.clientWidth * 0.8
+        const gap = 16
+        container.scrollTo({
+          left: next * (cardWidth + gap),
+          behavior: 'smooth',
+        })
+        return next
+      })
+    }, 3800)
+
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     if (!zoom) return
@@ -51,13 +84,17 @@ export default function Gallery() {
           description="Presurizadores, recirculadores y grupos de presión de distintas marcas, instalados con plomería prolija y conexionado seguro. Sin fotos de catálogo: esto es trabajo nuestro."
         />
 
-        {/* Grilla de fotos flexbox auto-centrada */}
-        <div className="mt-14 flex flex-wrap justify-center gap-3 sm:gap-4">
+        {/* Grilla de fotos: carrusel táctil en mobile, grilla en desktop */}
+        <div 
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="mt-14 flex overflow-x-auto gap-4 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-5 -mx-5 pb-6 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 sm:gap-4 sm:px-0 sm:mx-0 sm:pb-0"
+        >
           {TRABAJOS.map((t, i) => (
             <Reveal
               key={t.src}
               delay={(i % 6) * 0.06}
-              className="w-[calc(50%-6px)] sm:w-[calc(33.333%-11px)] lg:w-[calc(16.666%-14px)]"
+              className="w-[80vw] shrink-0 snap-center sm:w-auto sm:shrink sm:snap-align-none"
             >
               <button
                 onClick={() => setZoom(t)}
@@ -85,6 +122,18 @@ export default function Gallery() {
                 </div>
               </button>
             </Reveal>
+          ))}
+        </div>
+
+        {/* Paginación de puntitos visible solo en mobile */}
+        <div className="mt-4 flex justify-center gap-1.5 sm:hidden">
+          {TRABAJOS.map((_, idx) => (
+            <div
+              key={idx}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                activeSlide === idx ? 'w-4 bg-aqua-400' : 'w-1.5 bg-white/20'
+              }`}
+            />
           ))}
         </div>
 

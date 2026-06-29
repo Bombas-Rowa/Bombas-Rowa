@@ -10,11 +10,11 @@ export const BUSINESS = {
   // Eslogan que ataca el dolor (baja presión / quedarse sin agua).
   slogan: 'Te rescatamos del agua sin presión.',
 
-  // ⚠️ REEMPLAZAR por el número real (formato internacional, sin + ni espacios).
-  // Ej. Argentina: 54 9 11 XXXX XXXX  →  '5491122334455'
-  whatsapp: '5491100000000',
+  // Número de WhatsApp (wa.me) y teléfono visible. Se leen del archivo .env
+  // (VITE_WHATSAPP / VITE_PHONE_DISPLAY); el valor de acá es solo fallback.
+  whatsapp: import.meta.env.VITE_WHATSAPP || '5491168698390',
 
-  phoneDisplay: '+54 9 11 0000-0000',
+  phoneDisplay: import.meta.env.VITE_PHONE_DISPLAY || '+54 9 11 6869-8390',
   email: 'contacto@hidrorescate.com.ar',
   city: 'Buenos Aires y AMBA',
   hours: 'Lun a Sáb · 8:00 a 19:00 hs',

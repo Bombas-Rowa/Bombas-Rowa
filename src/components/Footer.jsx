@@ -48,9 +48,8 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {[
                 { l: 'Inicio', to: '/' },
-                { l: 'Trabajos', to: '/#galeria' },
                 { l: 'Servicios', to: '/#servicios' },
-                { l: 'Cómo trabajamos', to: '/#proceso' },
+                { l: 'Trabajos', to: '/#galeria' },
                 { l: 'Contacto', to: '/#contacto' },
               ].map((i) => (
                 <li key={i.l}>
